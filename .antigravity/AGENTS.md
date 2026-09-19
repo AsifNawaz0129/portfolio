@@ -49,29 +49,26 @@ Deployment: Cloudflare Pages
 
 ## 3. Design system
 
-Style: **premium technical minimal**. Monochrome, editorial, lots of whitespace, strict alignment.
+Style: **warm technical editorial**. Warm cream/off-white background, deep ink black typography, rich terracotta/rust accent, monospace structural tags, pill CTAs, and structured metrics alignment.
 
 **Allowed colors** (defined in `@theme`, use only these):
 
-| Token | Use |
-|---|---|
-| `ink` | Main text and dark elements |
-| `paper` | Page background |
-| `muted` | Secondary text |
-| `line` | Borders and dividers |
+| Token | Value | Use |
+|---|---|---|
+| `paper` | `#f8f6f0` | Warm cream page background |
+| `paper-card` | `#ffffff` | Clean white card background |
+| `ink` | `#141413` | Deep black main text & dark CTA buttons |
+| `muted` | `#787570` | Secondary text, descriptors, and subtle metadata |
+| `line` | `#e5e1d8` | Subtle warm dividers and borders |
+| `accent` | `#c84b26` | Terracotta / rust orange accent (highlights, active links, brand accents) |
+| `accent-hover` | `#b03e1c` | Darker terracotta for hover states |
+| `accent-subtle` | `#faeee9` | Soft terracotta tint for pill tags |
 
-Use them as Tailwind classes: `text-ink`, `bg-paper`, `text-muted`, `border-line`.
+Use them as Tailwind classes: `text-ink`, `bg-paper`, `bg-paper-card`, `text-muted`, `border-line`, `text-accent`, `bg-accent`, `bg-accent-subtle`.
 
-**Fonts:** `font-sans` (Inter) for text, `font-mono` (JetBrains Mono) for code and small labels.
+**Fonts:** `font-sans` (Inter) for body & headings, `font-mono` (JetBrains Mono) for tags, code, labels, and bracketed cues `( hello, i'm )`.
 
-**Never use:**
-- Gradients, glows, shadows for decoration, or animated backgrounds
-- Neon colors, terminal or "hacker" aesthetics, matrix effects
-- Skill progress bars or percentages (for example "Playwright 90%")
-- Stock icons or emoji as decoration
-- Scroll-triggered animations
-
-**Layout:** content column around `max-w-3xl`, generous padding, mobile-first. Every page must work at 375px width without horizontal scrolling.
+**Layout:** content column around `max-w-3xl` / `max-w-4xl`, generous whitespace, mobile-first. Every page must work at 375px width without horizontal scrolling.
 
 ## 4. Code conventions
 
