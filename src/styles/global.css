@@ -16,42 +16,34 @@
   --color-accent-subtle: #faeee9;
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-paper);
-  color: var(--color-ink);
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-}
-
-main {
-  width: 100%;
-  max-width: 52rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2.5rem 1rem;
-}
-
-@media (min-width: 640px) {
-  main {
-    padding: 4rem 1.5rem;
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
   }
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  main {
+    width: 100%;
+  }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-code {
-  font-family: var(--font-mono);
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  code {
+    font-family: var(--font-mono);
+  }
 }
