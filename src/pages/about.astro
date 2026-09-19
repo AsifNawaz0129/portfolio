@@ -1,63 +1,219 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE } from '../consts';
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Asif Nawaz',
+	jobTitle: SITE_ROLE,
+	description:
+		'Senior Software QA Engineer & AI Automation Architect with 8+ years of experience engineering scalable test infrastructure across enterprise web, mobile, and API ecosystems.',
+	url: Astro.site?.toString() ?? 'https://asifnawaz.com/about',
+	sameAs: [GITHUB_URL, LINKEDIN_URL],
+};
+
+const pillars = [
+	{
+		title: 'Playwright & Cypress',
+		description: 'Code-first automation frameworks in TypeScript & Python with parallel CI execution matrices.',
+		icon: 'code',
+	},
+	{
+		title: 'AI-Driven QA Architect',
+		description: 'Pioneering autonomous self-healing test suites, synthetic test data, and AI defect triage.',
+		icon: 'cpu',
+	},
+	{
+		title: 'Mobile & API SDET',
+		description: 'Cross-platform mobile automation with Appium/Webdriver.io and contract testing with Postman.',
+		icon: 'smartphone',
+	},
+	{
+		title: 'ISTQB Certified & QA Lead',
+		description: 'Certified Tester (CTFL) driving shift-left methodologies, JMeter load testing, and release sign-offs.',
+		icon: 'shield-check',
+	},
+];
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`About | ${SITE_TITLE}`}
+			description="Learn more about Asif Nawaz, Senior SQA Engineer & AI Automation Architect with 8+ years of experience in enterprise test automation, CI/CD, and quality strategy."
+		/>
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+	</head>
+	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
+		<Header />
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+		<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16 sm:space-y-24">
+			<!-- Header Section -->
+			<section class="space-y-3 pt-2" aria-labelledby="about-heading">
+				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+					&#40; get to know me &#41;
+				</div>
+				<h1
+					id="about-heading"
+					class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
+				>
+					About <span class="italic text-accent font-serif font-normal">Me</span>
+				</h1>
+			</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<!-- Main 2-Column About Grid -->
+			<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start" aria-label="Profile Overview">
+				<!-- Left Column: Portrait & Floating Badge -->
+				<div class="lg:col-span-5 flex justify-center lg:justify-start">
+					<div class="relative w-full max-w-md">
+						<!-- Arched Image Container -->
+						<div class="w-full aspect-4/5 rounded-t-full rounded-b-3xl overflow-hidden border border-line bg-paper-card shadow-sm relative">
+							<img
+								src="/asif-nawaz.jpg"
+								alt="Asif Nawaz - Senior Software QA Engineer & SDET"
+								class="w-full h-full object-cover object-top"
+								loading="eager"
+							/>
+						</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+						<!-- Floating Info Badge on Bottom-Left -->
+						<div class="absolute -bottom-5 left-4 sm:left-6 bg-paper-card/95 backdrop-blur-xs border border-line rounded-2xl p-3.5 sm:p-4 shadow-md flex items-center justify-between gap-4 max-w-[90%]">
+							<div class="space-y-0.5">
+								<div class="text-sm font-bold font-serif text-ink leading-tight">
+									Asif Nawaz
+								</div>
+								<div class="text-[10px] font-mono uppercase tracking-wider text-muted">
+									Islamabad, PK
+								</div>
+							</div>
+							<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-300/80 bg-emerald-100/70 text-emerald-800 text-[10px] font-mono font-medium tracking-wide shadow-2xs shrink-0">
+								<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
+								<span>Available</span>
+							</div>
+						</div>
+					</div>
+				</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+				<!-- Right Column: Narrative & Pillars -->
+				<div class="lg:col-span-7 space-y-8 pt-4 lg:pt-0">
+					<!-- Narrative Bio with prominent Drop-Cap and Italic Accent Phrases -->
+					<div class="space-y-5 text-base sm:text-lg text-muted leading-relaxed font-sans">
+						<p class="overflow-hidden">
+							<span class="text-6xl sm:text-7xl font-serif font-bold text-accent float-left mr-3 mt-1 leading-[0.8] select-none">H</span>
+							<strong class="text-ink font-semibold text-lg sm:text-xl">i, I'm Asif</strong> — a <span class="italic text-accent font-serif font-medium">senior software quality assurance engineer & AI automation architect</span> based in Islamabad, Pakistan, with <strong class="text-ink font-semibold">eight years</strong> of shipping high-reliability code-first test infrastructure across enterprise web, mobile, and API platforms.
+						</p>
+
+						<p>
+							I've led quality engineering initiatives at <strong class="text-ink font-semibold">Shopworks</strong> (London Remote), <strong class="text-ink font-semibold">Rayn</strong>, <strong class="text-ink font-semibold">Aurora Solutions</strong>, and <strong class="text-ink font-semibold">MFSYS</strong>. Architected custom test automation frameworks in <span class="italic text-accent font-serif font-medium">Playwright, Cypress, and Selenium</span>, slashing CI pipeline feedback loops by <strong class="text-ink font-semibold">45%</strong> and scaling automated regression coverage by <strong class="text-ink font-semibold">60%</strong>.
+						</p>
+
+						<p>
+							Currently specializing in <span class="italic text-accent font-serif font-medium">autonomous self-healing test suites</span> and Generative AI for test data generation and intelligent defect triage. Open to <span class="italic text-accent font-serif font-medium">Senior SDET, Lead QA, and AI Automation Architect</span> roles globally (Remote).
+						</p>
+					</div>
+
+					<!-- 2x2 Highlights Grid -->
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+						{
+							pillars.map((pillar) => (
+								<div class="p-5 sm:p-6 rounded-2xl border border-line bg-paper-card space-y-2.5 hover:border-accent/40 transition-none">
+									<div class="text-accent">
+										{pillar.icon === 'code' && (
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+										)}
+										{pillar.icon === 'cpu' && (
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+										)}
+										{pillar.icon === 'smartphone' && (
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+										)}
+										{pillar.icon === 'shield-check' && (
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+										)}
+									</div>
+									<h2 class="text-sm font-bold font-sans text-ink">
+										{pillar.title}
+									</h2>
+									<p class="text-xs text-muted leading-relaxed font-sans">
+										{pillar.description}
+									</p>
+								</div>
+							))
+						}
+					</div>
+
+					<!-- Action Buttons Row -->
+					<div class="flex flex-wrap items-center gap-4 pt-4">
+						<a
+							href="/resume"
+							class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none shadow-sm"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+							<span class="text-paper font-medium">Download Resume</span>
+						</a>
+						<a
+							href={`mailto:${EMAIL}`}
+							class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-line bg-paper-card text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							<span class="text-ink font-medium">Get in Touch</span>
+						</a>
+						<a
+							href="/projects"
+							class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-muted text-sm font-mono hover:text-ink transition-none"
+						>
+							<span>See Projects →</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Bottom CTA Banner -->
+			<section
+				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				aria-labelledby="cta-heading"
+			>
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; have a project in mind? &#41;
+					</div>
+					<h2
+						id="cta-heading"
+						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
+					>
+						Let’s build <span class="italic text-accent font-normal">bulletproof systems</span>
+					</h2>
+				</div>
+
+				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed">
+					Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 pt-2">
+					<a
+						href={`mailto:${EMAIL}`}
+						class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+					>
+						<span class="text-paper font-medium">Get in Touch</span>
+						<span class="text-paper font-medium">→</span>
+					</a>
+					<a
+						href={LINKEDIN_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+					>
+						<span class="text-ink font-medium">LinkedIn Profile</span>
+						<span class="text-xs text-muted">↗</span>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
