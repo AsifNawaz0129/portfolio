@@ -1,11 +1,10 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,100 +14,135 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		<BaseHead
+			title={`Blog & Engineering Articles | ${SITE_TITLE}`}
+			description="Deep dives into enterprise QA test automation, Playwright & Cypress architectures, AI-assisted quality testing, and CI/CD acceleration by Asif Nawaz."
+		/>
 	</head>
-	<body>
+	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
 		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-12 sm:space-y-16">
+			<!-- Header Section -->
+			<section class="space-y-4 pt-2" aria-labelledby="blog-heading">
+				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+					&#40; writing & technical insights &#41;
+				</div>
+				<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+					<div>
+						<h1
+							id="blog-heading"
+							class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
+						>
+							<span class="italic text-accent font-serif font-normal">Engineering</span> Articles
+						</h1>
+						<p class="text-base sm:text-lg text-muted max-w-2xl font-sans mt-4 leading-relaxed">
+							Practical guides and architectural breakdowns on building bulletproof test automation, scaling CI/CD matrices, and integrating AI into modern quality engineering workflows.
+						</p>
+					</div>
+
+					<!-- Counter Badge -->
+					<div class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-line bg-paper-card text-xs font-mono text-muted shadow-2xs self-start md:self-end">
+						<span class="w-2 h-2 rounded-full bg-accent inline-block animate-pulse"></span>
+						<span>{posts.length} PUBLISHED ARTICLES</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Articles Grid -->
+			<section aria-label="Articles Collection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+				{
+					posts.map((post) => (
+						<article class="group rounded-2xl border border-line bg-paper-card p-6 sm:p-8 flex flex-col justify-between hover:border-ink/40 transition-all duration-300 shadow-2xs hover:shadow-md relative overflow-hidden">
+							<div class="space-y-4">
+								<!-- Top Date & Tag -->
+								<div class="flex items-center justify-between gap-2 border-b border-line/60 pb-3">
+									<div class="text-xs font-mono text-muted">
 										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+									</div>
+									{post.data.tags && post.data.tags.length > 0 && (
+										<span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono border border-line bg-paper text-accent font-medium">
+											{post.data.tags[0]}
+										</span>
+									)}
+								</div>
+
+								<!-- Article Title -->
+								<h2 class="text-xl sm:text-2xl font-bold text-ink font-serif group-hover:text-accent transition-colors duration-200 leading-snug">
+									<a href={`/blog/${post.id}/`} class="focus-visible:outline-2 focus-visible:outline-accent rounded-sm">
+										<span class="absolute inset-0 z-0" aria-hidden="true" />
+										{post.data.title}
+									</a>
+								</h2>
+
+								<!-- Excerpt -->
+								<p class="text-sm text-muted leading-relaxed font-sans line-clamp-3">
+									{post.data.description}
+								</p>
+							</div>
+
+							<!-- Footer / Action Link -->
+							<div class="pt-6 border-t border-line/60 mt-6 flex items-center justify-between text-xs font-mono text-muted">
+								<div class="flex flex-wrap gap-1.5 z-10 relative">
+									{post.data.tags && post.data.tags.slice(0, 2).map((tag) => (
+										<span class="px-2 py-0.5 rounded bg-paper border border-line text-[10px] text-muted">
+											#{tag}
+										</span>
+									))}
+								</div>
+								<span class="text-accent font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200 z-10 relative">
+									<span>Read</span>
+									<span>→</span>
+								</span>
+							</div>
+						</article>
+					))
+				}
+			</section>
+
+			<!-- Bottom CTA Banner -->
+			<section
+				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				aria-labelledby="cta-heading"
+			>
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; discussions & collaboration &#41;
+					</div>
+					<h2
+						id="cta-heading"
+						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
+					>
+						Have thoughts or <span class="italic text-accent font-normal">want to collaborate?</span>
+					</h2>
+				</div>
+
+				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
+					I regularly write about testing architecture, CI pipeline optimization, and AI automation. Feel free to connect on LinkedIn or reach out directly.
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 pt-2">
+					<a
+						href={LINKEDIN_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-200 shadow-sm"
+					>
+						<svg class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+						<span>Connect on LinkedIn</span>
+						<span class="text-xs">↗</span>
+					</a>
+					<a
+						href={`mailto:${EMAIL}`}
+						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
+					>
+						<span>Send an Email</span>
+						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+					</a>
+				</div>
 			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
