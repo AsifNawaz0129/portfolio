@@ -1,0 +1,261 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE } from '../consts';
+
+const projects = [
+	{
+		title: 'ShopWorks Enterprise E2E Test Suite & Testim Project',
+		category: 'Enterprise SaaS QA',
+		year: '2023 — Present',
+		company: 'ShopWorks · London, UK (Remote)',
+		impact: '+60% Coverage / -45% Feedback Loop',
+		description:
+			'Architected custom, highly reusable automation wrapper libraries and test components in Playwright & TypeScript, and maintained Testim automation projects across 5+ parallel feature streams.',
+		tags: ['Playwright', 'TypeScript', 'Testim', 'GitLab CI', 'Docker', 'Allure'],
+		highlights: [
+			'Expanded automated E2E regression coverage by 60% across distributed enterprise web platforms',
+			'Designed parallel test execution matrices in GitLab CI, reducing pipeline feedback loops by 45%',
+			'Stabilized CI automation by refactoring legacy synchronization, cutting pipeline failures by ~60%',
+		],
+		gradient: 'from-amber-500/10 via-orange-500/5 to-transparent',
+		badgeColor: 'border-orange-200 bg-orange-50 text-orange-800',
+	},
+	{
+		title: 'React Native Mobile Automation Framework',
+		category: 'Mobile SDET',
+		year: '2022 — 2023',
+		company: 'Rayn · Islamabad, Pakistan',
+		impact: '99% Pass Rate / 0 Escapes in 40+ Releases',
+		description:
+			'Built a modular, cross-platform mobile test automation framework from scratch for React Native applications utilizing Appium, Webdriver.io, and Node.js with BrowserStack cloud device execution.',
+		tags: ['Appium', 'Webdriver.io', 'React Native', 'Node.js', 'BrowserStack', 'ClickUp'],
+		highlights: [
+			'Implemented Component Object Model (COM) decoupling UI layers into isolated, maintainable components',
+			'Increased automated regression safety bounds by 50% while cutting test execution cycles in half',
+			'Executed robust API contract testing with Postman and Swagger for frontend-to-backend microservices',
+		],
+		gradient: 'from-blue-500/10 via-indigo-500/5 to-transparent',
+		badgeColor: 'border-blue-200 bg-blue-50 text-blue-800',
+	},
+	{
+		title: 'Aurora Solutions E2E Web & Flutter Test Suite',
+		category: 'Web & Cross-Platform QA',
+		year: '2019 — 2022',
+		company: 'Aurora Solutions · Islamabad, Pakistan',
+		impact: '+50% Coverage / 100+ Defects Triaged',
+		description:
+			'Developed automated E2E test suites for web and mobile applications using Cypress and Flutter Driver within cross-functional agile squads delivering zero-defect releases.',
+		tags: ['Cypress', 'Flutter Driver', 'Apache JMeter', 'Jira', 'Agile / Scrum'],
+		highlights: [
+			'Boosted automated regression test coverage by 50% across rapid sprint release cycles',
+			'Conducting deep-dive performance and load testing using Apache JMeter with a 90% pass rate under load',
+			'Maintained rigorous defect tracking and test reporting in Jira, improving triage for over 100+ defects',
+		],
+		gradient: 'from-emerald-500/10 via-teal-500/5 to-transparent',
+		badgeColor: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+	},
+	{
+		title: 'MFSYS Microfinance Core Banking QA Suite',
+		category: 'Financial Banking QA',
+		year: '2018 — 2019',
+		company: 'MFSYS Software And Systems · Islamabad, Pakistan',
+		impact: '100+ Critical Financial Defects Resolved',
+		description:
+			'Engineered automated test scripts from scratch using Selenium WebDriver with Java and TestNG for core microfinance banking platforms and branch network workflows.',
+		tags: ['Selenium WebDriver', 'Java', 'TestNG', 'SQL', 'Financial QA'],
+		highlights: [
+			'Validated loan origination, KYC onboarding, and fund disbursement across distributed branch networks',
+			'Resolved 100+ critical edge-case defects in interest rate compounding and end-of-day general ledger reconciliations',
+			'Reconciled automated repayment schedules against backend SQL databases to prevent balance mismatches',
+		],
+		gradient: 'from-purple-500/10 via-violet-500/5 to-transparent',
+		badgeColor: 'border-purple-200 bg-purple-50 text-purple-800',
+	},
+	{
+		title: 'Apache JMeter Enterprise Load & Stress Benchmark Suite',
+		category: 'Performance Engineering',
+		year: '2019 — Present',
+		company: 'ShopWorks & Aurora Solutions',
+		impact: 'Peak Traffic Latency SLAs Guaranteed',
+		description:
+			'Designed and executed distributed stress, endurance, and spike testing suites using Apache JMeter to validate server capacity, response latency, and database connection pooling under peak operational stress.',
+		tags: ['Apache JMeter', 'Performance Testing', 'Load Benchmarking', 'Docker', 'AWS'],
+		highlights: [
+			'Simulated realistic concurrent user journeys with dynamic parameterization and assertion verification',
+			'Uncovered memory leaks, slow database queries, and thread locks before high-traffic production rollouts',
+			'Generated comprehensive latency, error-rate, and throughput benchmark reports for stakeholders',
+		],
+		gradient: 'from-rose-500/10 via-pink-500/5 to-transparent',
+		badgeColor: 'border-rose-200 bg-rose-50 text-rose-800',
+	},
+	{
+		title: 'AI-Driven QA & Autonomous Quality Engineering',
+		category: 'AI QA & Innovation',
+		year: '2023 — Present',
+		company: 'ShopWorks & Quality Labs',
+		impact: '<45 Min Triage / 85% Less Maintenance',
+		description:
+			'Pioneered AI-driven QA workflows leveraging Generative AI for automated synthetic test data generation, intelligent bug analysis, and resilient self-healing test selector validation.',
+		tags: ['AI-Driven Testing', 'Generative AI', 'Synthetic Data', 'Playwright', 'Python'],
+		highlights: [
+			'Validated AI-driven workflows and AI-generated outputs against strict business acceptance criteria',
+			'Reduced average bug resolution time to under 45 minutes using automated stack traces and reproduction logs',
+			'Deployed dynamic heuristic locator recovery to eliminate pipeline flakiness during rapid UI redesigns',
+		],
+		gradient: 'from-amber-500/10 via-stone-500/5 to-transparent',
+		badgeColor: 'border-stone-200 bg-stone-50 text-stone-800',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Projects & QA Frameworks | ${SITE_TITLE}`}
+			description="Explore selected QA automation architectures, enterprise frameworks, mobile testing suites, and AI-driven quality engineering projects built by Asif Nawaz."
+		/>
+	</head>
+	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
+		<Header />
+
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-12 sm:space-y-16">
+			<!-- Header Section -->
+			<section class="space-y-4 pt-2" aria-labelledby="projects-heading">
+				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+					&#40; featured work &#41;
+				</div>
+				<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+					<div>
+						<h1
+							id="projects-heading"
+							class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
+						>
+							<span class="italic text-accent font-serif font-normal">Selected</span> Projects
+						</h1>
+						<p class="text-base sm:text-lg text-muted max-w-2xl font-sans mt-4 leading-relaxed">
+							A curated collection of production QA automation frameworks, mobile testing engines, performance benchmark suites, and AI quality workflows engineered across enterprise platforms.
+						</p>
+					</div>
+
+					<!-- Counter Badge -->
+					<div class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-line bg-paper-card text-xs font-mono text-muted shadow-2xs self-start md:self-end">
+						<span class="w-2 h-2 rounded-full bg-accent inline-block animate-pulse"></span>
+						<span>6 PRODUCTION FRAMEWORKS</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Projects Grid (3-column, compact, no empty spaces) -->
+			<section aria-label="Projects Collection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+				{
+					projects.map((project) => (
+						<article class="group rounded-2xl border border-line bg-paper-card p-6 sm:p-7 flex flex-col justify-between hover:border-ink/40 transition-all duration-300 shadow-2xs hover:shadow-md relative overflow-hidden">
+							<!-- Subtle Header Accent Background -->
+							<div class:list={['absolute top-0 left-0 right-0 h-28 bg-gradient-to-b opacity-60 pointer-events-none', project.gradient]} />
+
+							<div class="space-y-5 relative z-10">
+								<!-- Card Top Meta -->
+								<div class="flex items-center justify-between gap-2">
+									<span class:list={['px-2.5 py-1 rounded-full text-[11px] font-mono font-medium border', project.badgeColor]}>
+										{project.category}
+									</span>
+									<span class="text-xs font-mono text-muted">
+										{project.year}
+									</span>
+								</div>
+
+								<!-- Company Attribution -->
+								<div class="text-xs font-mono text-muted flex items-center gap-1.5 -mt-2">
+									<span>🏢</span>
+									<span>{project.company}</span>
+								</div>
+
+								<!-- Title & Impact Metric -->
+								<div class="space-y-2">
+									<h2 class="text-xl font-bold text-ink font-sans group-hover:text-accent transition-colors duration-200">
+										{project.title}
+									</h2>
+									<div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-accent bg-accent/5 px-2.5 py-1 rounded-md border border-accent/20">
+										<span>⚡</span>
+										<span>{project.impact}</span>
+									</div>
+								</div>
+
+								<!-- Narrative Description -->
+								<p class="text-sm text-muted leading-relaxed font-sans">
+									{project.description}
+								</p>
+
+								<!-- Key Architecture Highlights -->
+								<ul class="space-y-2 text-xs text-ink/90 font-sans border-t border-line/60 pt-4">
+									{project.highlights.map((highlight) => (
+										<li class="flex items-start gap-2">
+											<span class="text-accent font-bold mt-0.5">•</span>
+											<span>{highlight}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<!-- Tech Stack Badges -->
+							<div class="pt-6 relative z-10 border-t border-line/60 mt-6 flex flex-wrap gap-1.5">
+								{project.tags.map((tag) => (
+									<span class="px-2 py-0.5 rounded-md bg-paper border border-line text-[11px] font-mono text-muted">
+										{tag}
+									</span>
+								))}
+							</div>
+						</article>
+					))
+				}
+			</section>
+
+			<!-- Bottom Banner CTA -->
+			<section
+				class="p-8 sm:p-12 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				aria-labelledby="cta-heading"
+			>
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; have a project in mind? &#41;
+					</div>
+					<h2
+						id="cta-heading"
+						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
+					>
+						Let’s build <span class="italic text-accent font-normal">something reliable</span>
+					</h2>
+				</div>
+
+				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
+					Looking to architect an enterprise automation test suite, modernize your CI/CD pipelines, or benchmark application performance? Reach out to collaborate.
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 pt-2">
+					<a
+						href={`mailto:${EMAIL}`}
+						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-sm"
+					>
+						<span>Get in Touch</span>
+						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+					</a>
+					<a
+						href={GITHUB_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200"
+					>
+						<svg class="w-4 h-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+						<span>GitHub Architecture</span>
+						<span class="text-xs">↗</span>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>

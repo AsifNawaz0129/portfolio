@@ -74,71 +74,122 @@ const expertise = [
 	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
 		<Header />
 
-		<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 space-y-12 sm:space-y-16">
 			<!-- Hero Section -->
-			<section class="space-y-6 sm:space-y-8 pt-2 sm:pt-4" aria-labelledby="hero-heading">
-				<!-- Status Badge -->
-				<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-300/80 bg-emerald-100/70 text-emerald-800 text-xs font-mono font-medium tracking-wide shadow-2xs">
-					<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
-					OPEN TO WORK · REMOTE (GLOBAL)
-				</div>
+			<section class="relative pt-2 sm:pt-4 pb-6 lg:pb-8 min-h-[440px] flex flex-col justify-center" aria-labelledby="hero-heading">
+				<!-- Left Hero Content -->
+				<div class="max-w-2xl lg:max-w-3xl space-y-6 sm:space-y-8">
+					<!-- Status Badge -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-300/80 bg-emerald-100/70 text-emerald-800 text-xs font-mono font-medium tracking-wide shadow-2xs">
+						<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+						OPEN TO WORK · REMOTE (GLOBAL)
+					</div>
 
-				<!-- Bracket Tag -->
-				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
-					&#40; hello, i'm &#41;
-				</div>
+					<!-- Bracket Tag -->
+					<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+						&#40; hello, i'm &#41;
+					</div>
 
-				<!-- Main Headline -->
-				<div class="space-y-4">
-					<h1
-						id="hero-heading"
-						class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink font-serif leading-none"
-					>
-						Asif <span class="italic text-accent font-serif font-normal">Nawaz</span>
-					</h1>
-
-					<!-- Role Tagline (Auto-rotating pure CSS) -->
-					<div class="flex items-center gap-2 text-xs sm:text-sm font-mono tracking-widest text-ink uppercase pt-2">
-						<span class="text-accent text-base sm:text-lg">→</span>
-						<span class="inline-block h-6 overflow-hidden align-middle">
-							<span class="animate-rotate-titles flex flex-col">
-								<span class="h-6 flex items-center text-ink font-semibold">SENIOR SQA ENGINEER</span>
-								<span class="h-6 flex items-center text-ink font-semibold">SENIOR SDET</span>
-								<span class="h-6 flex items-center text-ink font-semibold">SENIOR QA AUTOMATION ENGINEER</span>
-								<span class="h-6 flex items-center text-ink font-semibold">AI QA AUTOMATION ARCHITECT</span>
-								<span class="h-6 flex items-center text-ink font-semibold">SENIOR SQA ENGINEER</span>
+					<!-- Main Headline -->
+					<div class="space-y-4">
+						<h1
+							id="hero-heading"
+							class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink font-serif leading-none"
+						>
+							Asif <span class="italic text-accent font-serif font-normal inline-block relative">
+								Nawaz
+								<!-- Squiggly Underline Flourish -->
+								<svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-3 sm:h-4 text-accent pointer-events-none overflow-visible" viewBox="0 0 160 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<path d="M 4 8 Q 24 16, 44 8 T 84 8 T 124 8 T 156 8" />
+								</svg>
 							</span>
-						</span>
+						</h1>
+
+						<!-- Role Tagline (Auto-rotating pure CSS) -->
+						<div class="flex items-center gap-2 text-xs sm:text-sm font-mono tracking-widest text-ink uppercase pt-2">
+							<span class="text-accent text-base sm:text-lg">→</span>
+							<span class="inline-block h-6 overflow-hidden align-middle">
+								<span class="animate-rotate-titles flex flex-col">
+									<span class="h-6 flex items-center text-ink font-semibold">SENIOR SQA ENGINEER</span>
+									<span class="h-6 flex items-center text-ink font-semibold">SENIOR SDET</span>
+									<span class="h-6 flex items-center text-ink font-semibold">SENIOR QA AUTOMATION ENGINEER</span>
+									<span class="h-6 flex items-center text-ink font-semibold">AI QA AUTOMATION ARCHITECT</span>
+									<span class="h-6 flex items-center text-ink font-semibold">SENIOR SQA ENGINEER</span>
+								</span>
+							</span>
+						</div>
+					</div>
+
+					<!-- Elevator Pitch -->
+					<p class="text-base sm:text-lg text-muted max-w-xl leading-relaxed font-sans pt-1">
+						Senior Software QA Engineer and AI Automation Architect with 8+ years of experience engineering scalable, code-first test infrastructure across enterprise web, mobile, and API ecosystems. Specialized in Playwright, Cypress, CI/CD pipeline acceleration, and autonomous QA workflows.
+					</p>
+
+					<!-- Action Buttons with Hover Transitions -->
+					<div class="flex flex-wrap items-center gap-4 pt-2">
+						<a
+							href="/about"
+							class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-paper border border-ink text-sm font-medium hover:bg-accent hover:border-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-300 shadow-sm active:scale-98"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-paper transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+							<span class="text-paper font-medium">About Me</span>
+						</a>
+						<a
+							href="/projects"
+							class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-line bg-paper-card text-ink text-sm font-medium hover:bg-ink hover:text-paper hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-300 active:scale-98 shadow-2xs"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted group-hover:text-paper transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+							<span class="text-ink group-hover:text-paper font-medium transition-colors duration-300">View Work</span>
+						</a>
 					</div>
 				</div>
 
-				<!-- Elevator Pitch -->
-				<p class="text-base sm:text-lg text-muted max-w-3xl leading-relaxed font-sans pt-1">
-					Senior Software QA Engineer and AI Automation Architect with 8+ years of experience engineering scalable, code-first test infrastructure across enterprise web, mobile, and API ecosystems. Specialized in Playwright, Cypress, CI/CD pipeline acceleration, and autonomous QA workflows.
-				</p>
+				<!-- Right Hero Graphic: High-Def SVG Graphic pinned firmly to the right side -->
+				<div class="hidden lg:flex items-end gap-5 xl:gap-7 absolute right-0 -mr-2 sm:-mr-4 lg:-mr-6 bottom-0 select-none pointer-events-none" aria-hidden="true">
+					<div class="flex flex-col items-center relative">
+						<!-- Top Starburst (Warm Terracotta 6-ray star) -->
+						<svg class="w-10 h-10 text-accent absolute -top-12 right-2 animate-pulse" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+							<line x1="24" y1="4" x2="24" y2="44" />
+							<line x1="8" y1="14" x2="40" y2="34" />
+							<line x1="8" y1="34" x2="40" y2="14" />
+						</svg>
 
-				<!-- Action Buttons -->
-				<div class="flex flex-wrap items-center gap-4 pt-2">
-					<a
-						href="/about"
-						class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none shadow-sm"
-					>
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-						<span class="text-paper font-medium">About Me</span>
-					</a>
-					<a
-						href="/projects"
-						class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-line bg-paper-card text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
-					>
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-						<span class="text-ink font-medium">View Work</span>
-					</a>
-					<a
-						href="/contact"
-						class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full text-muted text-sm font-mono hover:text-ink transition-none"
-					>
-						<span>Contact me</span>
-					</a>
+						<!-- Rotating Circular Text Badge (Full 360-degree circular flow) -->
+						<div class="relative w-44 h-44 flex items-center justify-center">
+							<svg class="w-full h-full animate-spin-slow origin-center" viewBox="0 0 200 200" text-rendering="geometricPrecision">
+								<defs>
+									<path id="badgeCircle" d="M 100, 100 m -62, 0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" fill="none" />
+								</defs>
+								<text font-family="monospace" font-size="9" font-weight="600" letter-spacing="2.6" fill="#787570">
+									<textPath href="#badgeCircle" startOffset="0%">
+										• OPEN TO WORK • REMOTE (GLOBAL) • SENIOR SDET
+									</textPath>
+								</text>
+								<!-- Center Terracotta Starburst -->
+								<g stroke="#c84b26" stroke-width="2.5" stroke-linecap="round">
+									<line x1="100" y1="88" x2="100" y2="112" />
+									<line x1="89" y1="94" x2="111" y2="106" />
+									<line x1="89" y1="106" x2="111" y2="94" />
+								</g>
+							</svg>
+						</div>
+
+						<!-- Curved Doodle Arrow -->
+						<svg class="w-14 h-18 text-muted/80 -mt-1 -ml-4" viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M 22 10 C 18 40, 24 65, 54 75" />
+							<path d="M 38 72 L 55 76 L 52 58" />
+						</svg>
+					</div>
+
+					<!-- Vertical SCROLL Line Indicator -->
+					<div class="flex flex-col items-center gap-3 select-none pb-0">
+						<span class="font-mono text-[10px] tracking-[0.3em] font-semibold uppercase text-muted rotate-90 my-5">
+							SCROLL
+						</span>
+						<div class="w-[1.5px] h-20 bg-line relative overflow-hidden">
+							<div class="w-full h-10 bg-accent absolute bottom-0"></div>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -304,5 +355,18 @@ const expertise = [
 
 	.marquee-track {
 		animation: marquee 22s linear infinite;
+	}
+
+	@keyframes spinSlow {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.animate-spin-slow {
+		animation: spinSlow 20s linear infinite;
 	}
 </style>

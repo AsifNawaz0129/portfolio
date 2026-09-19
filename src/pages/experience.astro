@@ -1,0 +1,344 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE } from '../consts';
+
+const experiences = [
+	{
+		period: 'AUG 2023 — PRESENT',
+		type: 'FULL-TIME · REMOTE',
+		role: 'Senior SQA Engineer / SDET (QA Team Lead)',
+		company: 'ShopWorks',
+		location: 'London, England (Remote)',
+		summary:
+			'Leading end-to-end quality engineering, test automation architecture, and deployment sign-offs for an enterprise workforce management SaaS platform.',
+		achievements: [
+			'Led end-to-end QA activities across major enterprise product releases, coordinating manual and automated testing across 5+ feature streams and providing final deployment sign-offs.',
+			'Architected custom, highly reusable automation wrapper libraries and test components, expanding automated E2E regression test coverage by 60% across complex distributed web platforms.',
+			'Designed and maintained parallel test execution matrices in GitLab CI using Playwright and TypeScript, slashing pipeline feedback loops by 45% while managing isolated test state environments.',
+			'Stabilized CI automation suites by refactoring legacy tests and improving dynamic synchronization strategies, reducing CI pipeline failures by ~60%.',
+			'Validated AI-driven workflows and AI-generated outputs against strict business acceptance criteria and system requirements.',
+			'Conducted comprehensive performance and load testing using Apache JMeter to validate system scalability under peak operational stress.',
+			'Maintained and updated automated test cases within existing Testim projects according to project updates and feature changes.',
+			'Optimized developer productivity by reducing average bug resolution time from hours to under 45 minutes using automated stack traces, video artifacts, and isolated reproduction logs.',
+		],
+		skills: ['Playwright', 'TypeScript', 'Testim', 'GitLab CI', 'Docker', 'Apache JMeter', 'Allure', 'AI QA'],
+	},
+	{
+		period: 'JUL 2022 — AUG 2023',
+		type: 'FULL-TIME',
+		role: 'QA Automation Engineer (SDET) / SQA Engineer II',
+		company: 'Rayn',
+		location: 'Islamabad, Pakistan',
+		summary:
+			'Directed QA and test automation efforts for multi-platform web and mobile releases, mentoring a team of junior QA engineers in test design techniques and standards.',
+		achievements: [
+			'Engineered a modular, cross-platform mobile test automation framework from scratch for React Native applications utilizing Appium, Webdriver.io, and Node.js.',
+			'Established a Component Object Model (COM) strategy, decoupling UI layers into isolated components to maintain test stability across rapid UI updates.',
+			'Increased automated regression safety bounds by 50% while cutting test execution cycles in half, achieving a consistent 99% release pass rate.',
+			'Executed robust API integration and contract testing using Postman and Swagger to validate payload schemas across frontend-to-backend microservices.',
+			'Identified and resolved critical production defects within 24 hours, driving testing process optimizations that delivered a 20% gain in team efficiency.',
+			'Managed QA efforts for web and mobile releases, ensuring functional, integration, and regression testing coverage across 3+ product modules using ClickUp.',
+		],
+		skills: ['Appium', 'Webdriver.io', 'React Native', 'Node.js', 'Postman', 'Swagger', 'BrowserStack', 'ClickUp'],
+	},
+	{
+		period: 'AUG 2019 — JUL 2022',
+		type: 'FULL-TIME',
+		role: 'Software Quality Assurance Engineer',
+		company: 'Aurora Solutions',
+		location: 'Islamabad, Pakistan',
+		summary:
+			'Owned software quality assurance within cross-functional Agile squads, delivering timely, zero-defect release validation across sprint cycles.',
+		achievements: [
+			'Built automated E2E test suites for web and mobile applications using Cypress and Flutter Driver, boosting regression test coverage by 50%.',
+			'Conducted deep-dive performance, stress, and load testing for web applications using Apache JMeter, ensuring optimal responsiveness and a 90% pass rate under load.',
+			'Maintained rigorous defect tracking and test reporting in Jira, improving resolution visibility and triage for over 100+ reported defects.',
+			'Researched and integrated modern AI-assisted testing tools into the QA lifecycle to optimize test authoring and exploratory testing efficiency.',
+			'Collaborated with cross-functional teams to ensure quality releases in agile test cycles and provided recommendations to enhance overall user accessibility.',
+		],
+		skills: ['Cypress', 'Flutter Driver', 'Apache JMeter', 'Jira', 'Agile / Scrum', 'Web & Mobile QA'],
+	},
+	{
+		period: 'AUG 2018 — AUG 2019',
+		type: 'FULL-TIME',
+		role: 'Software Quality Assurance Engineer',
+		company: 'MFSYS Software And Systems (Pvt.) Ltd.',
+		location: 'Islamabad, Pakistan',
+		summary:
+			'Performed comprehensive requirement analysis, automated script development, and banking platform quality verification.',
+		achievements: [
+			'Developed and implemented custom automated test scripts for web applications from scratch using Selenium WebDriver with Java.',
+			'Validated core microfinance banking platforms for distributed branch networks, ensuring transactional accuracy and audit compliance across loan origination, KYC onboarding, and fund disbursement workflows.',
+			'Identified and resolved over 100 critical defects, including complex edge cases in interest rate compounding, penalty accruals, and end-of-day general ledger reconciliations.',
+			'Ensured data integrity by verifying that automated repayment schedules consistently reconciled against backend SQL databases, preventing balance mismatches.',
+			'Executed full-cycle functional, sanity, regression, integration, and UI compatibility testing across cross-browser environments.',
+		],
+		skills: ['Selenium WebDriver', 'Java', 'SQL', 'TestNG', 'Banking QA', 'Regression Testing'],
+	},
+	{
+		period: 'MAY 2017 — JUN 2017',
+		type: 'INTERNSHIP',
+		role: 'Frontend Developer',
+		company: 'uExel',
+		location: 'Islamabad, Pakistan',
+		summary:
+			'Developed responsive web interfaces, reusable code libraries, and dynamic client-side interactions.',
+		achievements: [
+			'Created high-quality, responsive web pages using HTML, CSS, and Bootstrap.',
+			'Developing user-friendly interfaces that deliver a seamless user experience and reusable code libraries.',
+			'Implemented and maintained JavaScript-based functionality, such as form validation and dynamic content loading.',
+		],
+		skills: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Responsive Design'],
+	},
+];
+
+const certifications = [
+	{
+		title: 'ISTQB Certified Tester - Foundation Level (CTFL)',
+		issuer: 'ISTQB',
+		date: 'Dec 2022',
+	},
+	{
+		title: 'Cypress - Modern Automation Testing from Scratch + Frameworks',
+		issuer: 'Udemy',
+		date: '2024',
+	},
+	{
+		title: 'Selenium WebDriver with Java - Basics to Advanced + Frameworks',
+		issuer: 'Udemy',
+		date: 'Apr 2021',
+	},
+	{
+		title: 'Testim Fundamentals',
+		issuer: 'Tricentis',
+		date: '2024',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Experience & Career Journey | ${SITE_TITLE}`}
+			description="Explore Asif Nawaz's verified career experience in software quality assurance, test automation architecture, SDET leadership, and AI quality engineering."
+		/>
+	</head>
+	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
+		<Header />
+
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-12 sm:space-y-16">
+			<!-- Header Section -->
+			<section class="space-y-4 pt-2" aria-labelledby="experience-heading">
+				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+					&#40; journey so far &#41;
+				</div>
+				<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+					<div>
+						<h1
+							id="experience-heading"
+							class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
+						>
+							<span class="italic text-accent font-serif font-normal">Career</span> Experience
+						</h1>
+						<p class="text-base sm:text-lg text-muted max-w-2xl font-sans mt-4 leading-relaxed">
+							8+ years of engineering scalable test infrastructure, leading QA teams, accelerating CI/CD pipelines, and driving AI-assisted automation across enterprise SaaS, FinTech, and mobile ecosystems.
+						</p>
+					</div>
+
+					<!-- Counter Pill -->
+					<div class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-line bg-paper-card text-xs font-mono text-muted shadow-2xs self-start md:self-end">
+						<span class="w-2 h-2 rounded-full bg-accent inline-block animate-pulse"></span>
+						<span>8+ YEARS · 5 ROLES</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Experience Timeline List -->
+			<section aria-label="Career Timeline" class="space-y-8 relative">
+				<!-- Vertical Background Guide Line -->
+				<div class="absolute left-4 sm:left-6 top-6 bottom-6 w-[1.5px] bg-line hidden sm:block" aria-hidden="true"></div>
+
+				<div class="space-y-8 sm:space-y-12">
+					{
+						experiences.map((item) => (
+							<article class="relative sm:pl-16 group">
+								<!-- Timeline Node Indicator -->
+								<div class="absolute left-4 sm:left-6 -translate-x-1/2 top-7 w-6 h-6 rounded-full border border-line bg-paper-card hidden sm:flex items-center justify-center group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-2xs">
+									<span class="w-2 h-2 rounded-full bg-accent"></span>
+								</div>
+
+								<!-- Card Content -->
+								<div class="p-6 sm:p-8 rounded-2xl border border-line bg-paper-card space-y-6 hover:border-ink/40 transition-all duration-300 shadow-2xs hover:shadow-md">
+									<!-- Top Meta Row -->
+									<div class="flex flex-wrap items-center justify-between gap-3 border-b border-line/60 pb-4">
+										<div class="flex items-center gap-2.5">
+											<span class="text-xs sm:text-sm font-mono font-semibold text-accent tracking-wider">
+												{item.period}
+											</span>
+											<span class="text-muted font-mono text-xs">•</span>
+											<span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono border border-line bg-paper text-muted">
+												{item.type}
+											</span>
+										</div>
+
+										<div class="text-xs font-mono text-muted flex items-center gap-1.5">
+											<span>📍</span>
+											<span>{item.location}</span>
+										</div>
+									</div>
+
+									<!-- Role & Company -->
+									<div class="space-y-1">
+										<h2 class="text-xl sm:text-2xl font-bold text-ink font-serif group-hover:text-accent transition-colors duration-200">
+											{item.role}
+										</h2>
+										<div class="text-sm sm:text-base font-medium text-muted font-sans">
+											{item.company}
+										</div>
+									</div>
+
+									<!-- Summary -->
+									<p class="text-sm sm:text-base text-muted leading-relaxed font-sans">
+										{item.summary}
+									</p>
+
+									<!-- Bullet Achievements -->
+									<div class="space-y-2.5 pt-2">
+										<div class="text-xs font-mono text-accent uppercase tracking-wider font-semibold">
+											Key Responsibilities & Deliverables
+										</div>
+										<ul class="space-y-2.5 text-sm text-ink/90 font-sans list-none p-0 m-0">
+											{item.achievements.map((ach) => (
+												<li class="flex items-start gap-3 leading-relaxed">
+													<span class="text-accent font-bold mt-1 text-xs shrink-0">✻</span>
+													<span>{ach}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+
+									<!-- Skills Stack Tags -->
+									<div class="flex flex-wrap gap-2 pt-4 border-t border-line/60">
+										{item.skills.map((skill) => (
+											<span class="px-3 py-1 rounded-md bg-paper border border-line text-xs font-mono text-muted">
+												{skill}
+											</span>
+										))}
+									</div>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<!-- Education & Certifications Grid -->
+			<section class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-4" aria-label="Education and Certifications">
+				<!-- Education -->
+				<div class="p-6 sm:p-8 rounded-2xl border border-line bg-paper-card space-y-4">
+					<div class="font-mono text-xs text-accent tracking-wider">
+						&#40; education &#41;
+					</div>
+					<h3 class="text-xl font-bold font-serif text-ink">
+						Bachelor of Science (BS) Computer Science
+					</h3>
+					<div class="text-sm text-muted font-sans space-y-1">
+						<div class="font-medium text-ink">National University of Computer and Emerging Sciences (FAST-NUCES)</div>
+						<div class="font-mono text-xs">2014 — 2018 · Islamabad, Pakistan</div>
+					</div>
+				</div>
+
+				<!-- Certifications -->
+				<div class="p-6 sm:p-8 rounded-2xl border border-line bg-paper-card space-y-4">
+					<div class="font-mono text-xs text-accent tracking-wider">
+						&#40; certifications &#41;
+					</div>
+					<h3 class="text-xl font-bold font-serif text-ink">
+						Industry Credentials
+					</h3>
+					<ul class="space-y-3 text-sm font-sans list-none p-0 m-0">
+						{
+							certifications.map((cert) => (
+								<li class="flex items-start justify-between gap-2 border-b border-line/40 pb-2.5 last:border-0 last:pb-0">
+									<div>
+										<div class="font-medium text-ink">{cert.title}</div>
+										<div class="text-xs text-muted font-mono">{cert.issuer}</div>
+									</div>
+									<span class="text-xs font-mono text-accent shrink-0">{cert.date}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</section>
+
+			<!-- Action Navigation Buttons -->
+			<section class="flex flex-wrap items-center justify-center gap-4 pt-4" aria-label="Resume & Profiles">
+				<a
+					href="/resume"
+					class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-300 shadow-sm"
+				>
+					<svg class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+					<span>View Full Resume</span>
+					<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+				</a>
+				<a
+					href={LINKEDIN_URL}
+					target="_blank"
+					rel="noreferrer noopener"
+					class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-300 shadow-2xs"
+				>
+					<svg class="w-4 h-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+					<span>LinkedIn Profile</span>
+					<span class="text-xs">↗</span>
+				</a>
+			</section>
+
+			<!-- Bottom CTA Banner -->
+			<section
+				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				aria-labelledby="cta-heading"
+			>
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; collaborate &#41;
+					</div>
+					<h2
+						id="cta-heading"
+						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
+					>
+						Let’s build <span class="italic text-accent font-normal">something reliable</span>
+					</h2>
+				</div>
+
+				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
+					Interested in elevating your test automation architecture, eliminating flaky CI pipelines, or scaling QA engineering? Let's connect.
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 pt-2">
+					<a
+						href={`mailto:${EMAIL}`}
+						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-200 shadow-sm"
+					>
+						<span>Get in Touch</span>
+						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+					</a>
+					<a
+						href={GITHUB_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
+					>
+						<span>GitHub Work</span>
+						<span class="text-xs">↗</span>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
