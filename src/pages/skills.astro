@@ -1,0 +1,298 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SkillIcon from '../components/SkillIcon.astro';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE } from '../consts';
+
+const tickerItems = [
+	{ text: 'Playwright', italic: true },
+	{ text: 'CYPRESS', italic: false },
+	{ text: 'Selenium', italic: true },
+	{ text: 'APPIUM', italic: false },
+	{ text: 'Cucumber / Gherkin', italic: true },
+	{ text: 'CI/CD PIPELINES', italic: false },
+	{ text: 'Postman', italic: true },
+	{ text: 'APACHE JMETER', italic: false },
+	{ text: 'Testim', italic: true },
+	{ text: 'GITLAB CI', italic: false },
+	{ text: 'Docker', italic: true },
+	{ text: 'TYPESCRIPT', italic: false },
+	{ text: 'AI-Driven QA', italic: true },
+];
+
+const skillSections = [
+	{
+		title: 'Testing & Automation',
+		count: 10,
+		icon: 'flask',
+		skills: [
+			{ name: 'Playwright', level: 5 },
+			{ name: 'Cypress', level: 5 },
+			{ name: 'Selenium', level: 5 },
+			{ name: 'Testim', level: 5 },
+			{ name: 'Appium', level: 5 },
+			{ name: 'Webdriver.io', level: 5 },
+			{ name: 'Flutter Driver', level: 4 },
+			{ name: 'Maestro', level: 4 },
+			{ name: 'Protractor', level: 4 },
+			{ name: 'TestNG', level: 5 },
+		],
+	},
+	{
+		title: 'CI/CD & Cloud Infrastructure',
+		count: 8,
+		icon: 'cloud',
+		skills: [
+			{ name: 'GitLab CI', level: 5 },
+			{ name: 'GitHub Actions', level: 5 },
+			{ name: 'Docker', level: 5 },
+			{ name: 'BrowserStack', level: 5 },
+			{ name: 'AWS Device Farm', level: 4 },
+			{ name: 'Codemagic', level: 4 },
+			{ name: 'Git', level: 5 },
+			{ name: 'ClickUp', level: 5 },
+		],
+	},
+	{
+		title: 'API & Performance Testing',
+		count: 6,
+		icon: 'gauge',
+		skills: [
+			{ name: 'Apache JMeter', level: 5 },
+			{ name: 'Postman', level: 5 },
+			{ name: 'Swagger', level: 5 },
+			{ name: 'REST Assured', level: 5 },
+			{ name: 'Newman CLI', level: 5 },
+			{ name: 'API Mocking', level: 5 },
+		],
+	},
+	{
+		title: 'Languages, AI & Quality',
+		count: 8,
+		icon: 'cpu',
+		skills: [
+			{ name: 'TypeScript', level: 5 },
+			{ name: 'JavaScript', level: 5 },
+			{ name: 'Python', level: 5 },
+			{ name: 'Java', level: 5 },
+			{ name: 'SQL', level: 5 },
+			{ name: 'AI-Driven QA', level: 5 },
+			{ name: 'Generative AI', level: 5 },
+			{ name: 'ISTQB CTFL', level: 5 },
+		],
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Skills & Tech Stack | ${SITE_TITLE}`}
+			description="Explore Asif Nawaz's comprehensive QA technical skills, test automation tools, performance engineering stacks, and AI quality workflows."
+		/>
+	</head>
+	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
+		<Header />
+
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-10 sm:space-y-14">
+			<!-- Header Section -->
+			<section class="space-y-4 pt-2 text-center max-w-3xl mx-auto" aria-labelledby="skills-heading">
+				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
+					&#40; my toolkit &#41;
+				</div>
+				<h1
+					id="skills-heading"
+					class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
+				>
+					Skills & <span class="italic text-accent font-serif font-normal">Stack</span>
+				</h1>
+				<p class="text-base sm:text-lg text-muted font-sans leading-relaxed">
+					Over 8 years of production software quality engineering, architecting code-first test frameworks, optimizing CI/CD feedback loops, and pioneering AI-assisted quality workflows.
+				</p>
+			</section>
+
+			<!-- Sliding Marquee Ticker (Warm Editorial font mix) -->
+			<section aria-label="Tool Marquee" class="border-y border-line py-4 -mx-4 sm:-mx-8 lg:-mx-12 overflow-hidden group cursor-default">
+				<div class="marquee-track flex w-max items-center group-hover:[animation-play-state:paused]">
+					<div class="flex items-center gap-x-8 text-sm shrink-0 pr-8">
+						{
+							tickerItems.map((item) => (
+								<>
+									<span class:list={[
+										item.italic ? 'font-serif italic text-lg sm:text-xl text-ink' : 'font-mono text-xs uppercase tracking-widest text-muted font-semibold'
+									]}>
+										{item.text}
+									</span>
+									<span class="text-accent text-sm">✻</span>
+								</>
+							))
+						}
+					</div>
+					<div class="flex items-center gap-x-8 text-sm shrink-0 pr-8" aria-hidden="true">
+						{
+							tickerItems.map((item) => (
+								<>
+									<span class:list={[
+										item.italic ? 'font-serif italic text-lg sm:text-xl text-ink' : 'font-mono text-xs uppercase tracking-widest text-muted font-semibold'
+									]}>
+										{item.text}
+									</span>
+									<span class="text-accent text-sm">✻</span>
+								</>
+							))
+						}
+					</div>
+				</div>
+			</section>
+
+			<!-- 2-Column Clean Categorized Grid (Matching Reference) -->
+			<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12" aria-label="Skill Matrix">
+				{
+					skillSections.map((section) => (
+						<div class="space-y-5">
+							<!-- Section Header -->
+							<div class="flex items-center gap-2.5 pb-2">
+								{section.icon === 'flask' && (
+									<svg class="w-5 h-5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31M14 2v7.31M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
+								)}
+								{section.icon === 'cloud' && (
+									<svg class="w-5 h-5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+								)}
+								{section.icon === 'gauge' && (
+									<svg class="w-5 h-5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+								)}
+								{section.icon === 'cpu' && (
+									<svg class="w-5 h-5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>
+								)}
+
+								<h2 class="text-xl sm:text-2xl font-bold font-serif text-ink tracking-tight flex items-baseline">
+									<span>{section.title}</span>
+									<span class="text-xs sm:text-sm font-mono text-muted font-normal ml-2">
+										({section.count})
+									</span>
+								</h2>
+							</div>
+
+							<!-- 5-Column Compact Grid of Clean Cards -->
+							<div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+								{section.skills.map((skill) => (
+									<div class="p-3 sm:p-3.5 rounded-2xl border border-line bg-paper-card flex flex-col items-center justify-between text-center space-y-1.5 hover:border-accent transition-all duration-200 shadow-2xs hover:shadow-sm group cursor-default aspect-square">
+										<!-- Official Brand Vector Icon -->
+										<div class="w-7 h-7 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 mt-1">
+											<SkillIcon name={skill.name} class="w-6 h-6" />
+										</div>
+
+										<!-- Tool Name -->
+										<div class="font-mono text-[11px] font-semibold text-ink text-center leading-tight truncate w-full px-0.5">
+											{skill.name}
+										</div>
+
+										<!-- 5-Dot Proficiency Rating -->
+										<div class="flex items-center justify-center gap-1 pb-0.5" aria-label={`${skill.level} out of 5 rating`}>
+											{Array.from({ length: 5 }).map((_, i) => (
+												<span
+													class:list={[
+														'w-1 h-1 rounded-full inline-block',
+														i < skill.level ? 'bg-accent' : 'bg-line/90',
+													]}
+												/>
+											))}
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					))
+				}
+			</section>
+
+			<!-- Action Buttons Row -->
+			<section class="flex flex-wrap items-center justify-center gap-4 pt-4" aria-label="Actions">
+				<a
+					href="/Asif-Nawaz-Resume.pdf"
+					download="Asif-Nawaz-Resume.pdf"
+					class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-300 shadow-sm active:scale-98"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+					<span>Download PDF Resume</span>
+				</a>
+				<a
+					href="/projects"
+					class="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-line bg-paper-card text-ink text-sm font-medium hover:border-ink transition-all duration-300 shadow-2xs"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+					<span>View Projects</span>
+					<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+				</a>
+				<a
+					href={`mailto:${EMAIL}`}
+					class="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
+				>
+					<span>Get in Touch</span>
+					<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+				</a>
+			</section>
+
+			<!-- Bottom CTA Banner -->
+			<section
+				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				aria-labelledby="cta-heading"
+			>
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; have a project in mind? &#41;
+					</div>
+					<h2
+						id="cta-heading"
+						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
+					>
+						Let’s build <span class="italic text-accent font-normal">something reliable</span>
+					</h2>
+				</div>
+
+				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
+					Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 pt-2">
+					<a
+						href={`mailto:${EMAIL}`}
+						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-200 shadow-sm"
+					>
+						<span>Get in Touch</span>
+						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+					</a>
+					<a
+						href={LINKEDIN_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
+					>
+						<svg class="w-4 h-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+						<span>LinkedIn Profile</span>
+						<span class="text-xs">↗</span>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	@keyframes marquee {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.marquee-track {
+		animation: marquee 24s linear infinite;
+	}
+</style>

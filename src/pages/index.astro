@@ -27,20 +27,51 @@ const personSchema = {
 };
 
 const tickerItems = [
-	'Enterprise QA',
-	'Playwright & Cypress',
-	'GitLab CI / CD',
-	'AI-Driven Testing',
-	'ISTQB Certified',
-	'Selenium & Appium',
-	'Performance Engineering',
+	{ text: 'Enterprise QA', italic: false },
+	{ text: 'Playwright & Cypress', italic: true },
+	{ text: 'GITLAB CI/CD', italic: false },
+	{ text: 'AI-Driven QA', italic: true },
+	{ text: 'ISTQB CERTIFIED', italic: false },
+	{ text: 'Selenium & Appium', italic: true },
+	{ text: 'PERFORMANCE TESTING', italic: false },
+	{ text: 'Component Object Model', italic: true },
+	{ text: 'DOCKER & CLOUD CI', italic: false },
+	{ text: 'Self-Healing Test Suites', italic: true },
 ];
 
 const metrics = [
-	{ value: '8+', label: 'YEARS EXPERIENCE' },
-	{ value: '60%', label: 'COVERAGE EXPANSION' },
-	{ value: '-45%', label: 'PIPELINE FEEDBACK TIME' },
-	{ value: '99%', label: 'RELEASE PASS RATE' },
+	{
+		label: 'YEARS EXPERIENCE',
+		parts: [
+			{ type: 'digit', target: 8, digits: [0, 1, 2, 3, 4, 5, 6, 7, 8], delay: '0.1s' },
+			{ type: 'symbol', char: '+' },
+		],
+	},
+	{
+		label: 'COVERAGE EXPANSION',
+		parts: [
+			{ type: 'digit', target: 6, digits: [0, 1, 2, 3, 4, 5, 6], delay: '0.18s' },
+			{ type: 'digit', target: 10, digits: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0], delay: '0.3s' },
+			{ type: 'symbol', char: '%' },
+		],
+	},
+	{
+		label: 'PIPELINE FEEDBACK TIME',
+		parts: [
+			{ type: 'symbol', char: '-' },
+			{ type: 'digit', target: 4, digits: [0, 1, 2, 3, 4], delay: '0.15s' },
+			{ type: 'digit', target: 5, digits: [0, 1, 2, 3, 4, 5], delay: '0.28s' },
+			{ type: 'symbol', char: '%' },
+		],
+	},
+	{
+		label: 'RELEASE PASS RATE',
+		parts: [
+			{ type: 'digit', target: 9, digits: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], delay: '0.12s' },
+			{ type: 'digit', target: 9, digits: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], delay: '0.25s' },
+			{ type: 'symbol', char: '%' },
+		],
+	},
 ];
 
 const expertise = [
@@ -193,25 +224,33 @@ const expertise = [
 				</div>
 			</section>
 
-			<!-- Sliding Marquee Ticker (Right to Left, Pauses on Hover) -->
-			<section aria-label="Core Competencies" class="border-y border-line py-4 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden group cursor-default">
+			<!-- Sliding Marquee Ticker (Warm Editorial font mix, Pauses on Hover) -->
+			<section aria-label="Core Competencies" class="border-y border-line py-4 -mx-4 sm:-mx-8 lg:-mx-12 overflow-hidden group cursor-default">
 				<div class="marquee-track flex w-max items-center group-hover:[animation-play-state:paused]">
-					<div class="flex items-center gap-x-8 text-xs font-mono uppercase tracking-widest text-muted shrink-0 pr-8">
+					<div class="flex items-center gap-x-8 text-sm shrink-0 pr-8">
 						{
 							tickerItems.map((item) => (
 								<>
-									<span class="text-ink font-semibold">{item}</span>
-									<span class="text-accent">✻</span>
+									<span class:list={[
+										item.italic ? 'font-serif italic text-lg sm:text-xl text-ink' : 'font-mono text-xs uppercase tracking-widest text-muted font-semibold'
+									]}>
+										{item.text}
+									</span>
+									<span class="text-accent text-sm">✻</span>
 								</>
 							))
 						}
 					</div>
-					<div class="flex items-center gap-x-8 text-xs font-mono uppercase tracking-widest text-muted shrink-0 pr-8" aria-hidden="true">
+					<div class="flex items-center gap-x-8 text-sm shrink-0 pr-8" aria-hidden="true">
 						{
 							tickerItems.map((item) => (
 								<>
-									<span class="text-ink font-semibold">{item}</span>
-									<span class="text-accent">✻</span>
+									<span class:list={[
+										item.italic ? 'font-serif italic text-lg sm:text-xl text-ink' : 'font-mono text-xs uppercase tracking-widest text-muted font-semibold'
+									]}>
+										{item.text}
+									</span>
+									<span class="text-accent text-sm">✻</span>
 								</>
 							))
 						}
@@ -220,15 +259,33 @@ const expertise = [
 			</section>
 
 			<!-- Metrics Grid -->
-			<section aria-label="Key Impact Metrics" class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-8 border-b border-line">
+			<section id="stats-section" aria-label="Key Impact Metrics" class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-8 border-b border-line">
 				{
 					metrics.map((metric, index) => (
 						<div class:list={[
-							'space-y-4',
+							'space-y-4 stat-card group',
 							index > 0 ? 'lg:border-l lg:border-line lg:pl-8' : '',
 						]}>
-							<div class="text-4xl sm:text-5xl lg:text-6xl font-normal font-serif italic text-ink tracking-tight leading-none">
-								{metric.value}
+							<div class="flex items-baseline text-4xl sm:text-5xl lg:text-6xl font-normal font-serif italic text-ink tracking-tight leading-none tabular-nums overflow-hidden h-[1.15em] select-none">
+								{metric.parts.map((part) => {
+									if (part.type === 'symbol') {
+										return <span class="inline-block px-[1px] leading-none">{part.char}</span>;
+									}
+									return (
+										<span class="inline-block h-full overflow-hidden px-[1px] align-top">
+											<span
+												class="digit-reel-strip flex flex-col will-change-transform"
+												style={`--target: ${part.target}; --delay: ${part.delay};`}
+											>
+												{part.digits.map((d) => (
+													<span class="h-[1.15em] flex items-center justify-center leading-none">
+														{d}
+													</span>
+												))}
+											</span>
+										</span>
+									);
+								})}
 							</div>
 							<div class="flex items-center gap-2 text-[11px] sm:text-xs font-mono tracking-wider text-muted uppercase">
 								<span class="text-accent font-semibold">—</span>
@@ -318,10 +375,53 @@ const expertise = [
 		</main>
 
 		<Footer />
+
+		<script>
+			function initCounters() {
+				const statsSection = document.getElementById('stats-section');
+				if (!statsSection) return;
+
+				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+					statsSection.classList.add('is-visible');
+					return;
+				}
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								statsSection.classList.add('is-visible');
+								observer.disconnect();
+							}
+						});
+					},
+					{ threshold: 0.15 }
+				);
+
+				observer.observe(statsSection);
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initCounters);
+			} else {
+				initCounters();
+			}
+			document.addEventListener('astro:page-load', initCounters);
+		</script>
 	</body>
 </html>
 
 <style>
+	.digit-reel-strip {
+		transform: translateY(0%);
+		transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+		transition-delay: var(--delay, 0s);
+	}
+
+	#stats-section.is-visible .digit-reel-strip {
+		transform: translateY(calc(-1.15em * var(--target)));
+	}
+
 	@keyframes titleRotate {
 		0%, 20% {
 			transform: translateY(0%);
