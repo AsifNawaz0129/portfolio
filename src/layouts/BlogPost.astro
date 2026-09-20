@@ -15,12 +15,39 @@ const encodedUrl = encodeURIComponent(currentUrl);
 const encodedTitle = encodeURIComponent(`${title} | Asif Nawaz`);
 const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
 const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+const techArticleSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'TechArticle',
+	headline: title,
+	description: description,
+	image: heroImage ? new URL(heroImage.src, Astro.url).toString() : undefined,
+	datePublished: pubDate.toISOString(),
+	dateModified: (updatedDate || pubDate).toISOString(),
+	author: {
+		'@type': 'Person',
+		name: 'Asif Nawaz',
+		jobTitle: SITE_ROLE,
+		url: Astro.site?.toString() ?? 'https://asifnawaz.com',
+		sameAs: [LINKEDIN_URL, GITHUB_URL],
+	},
+	publisher: {
+		'@type': 'Person',
+		name: 'Asif Nawaz',
+		url: Astro.site?.toString() ?? 'https://asifnawaz.com',
+	},
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': currentUrl,
+	},
+	keywords: tags.join(', '),
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={`${title} | Asif Nawaz`} description={description} />
+		<script type="application/ld+json" set:html={JSON.stringify(techArticleSchema)} />
 	</head>
 
 	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
