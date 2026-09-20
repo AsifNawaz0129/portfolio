@@ -9,3 +9,5 @@ export const SITE_ROLE = 'Senior Software Quality Assurance Engineer & Senior SD
 export const GITHUB_URL = 'https://github.com/AsifNawaz0129';
 export const LINKEDIN_URL = 'https://linkedin.com/in/asifnawaz2311/';
 export const EMAIL = 'asif.nawaz.fast@gmail.com';
+export const PHONE = '+92 333 5501668';
+export const PHONE_HREF = 'tel:+923335501668';
