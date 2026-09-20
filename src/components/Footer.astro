@@ -1,5 +1,5 @@
 ---
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '../consts';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, PHONE_HREF } from '../consts';
 
 const today = new Date();
 
@@ -80,6 +80,15 @@ const navLinks = [
 							class="text-muted hover:text-ink transition-none inline-flex items-center gap-1.5"
 						>
 							<span>Email</span>
+							<span class="text-xs text-muted">→</span>
+						</a>
+					</li>
+					<li>
+						<a
+							href={PHONE_HREF}
+							class="text-muted hover:text-ink transition-none inline-flex items-center gap-1.5"
+						>
+							<span>Phone & WhatsApp</span>
 							<span class="text-xs text-muted">→</span>
 						</a>
 					</li>
