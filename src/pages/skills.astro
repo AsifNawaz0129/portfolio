@@ -190,7 +190,7 @@ const skillSections = [
 										</div>
 
 										<!-- 5-Dot Proficiency Rating -->
-										<div class="flex items-center justify-center gap-1 pb-0.5" aria-label={`${skill.level} out of 5 rating`}>
+										<div role="img" class="flex items-center justify-center gap-1 pb-0.5" aria-label={`${skill.level} out of 5 rating`}>
 											{Array.from({ length: 5 }).map((_, i) => (
 												<span
 													class:list={[
@@ -227,8 +227,8 @@ const skillSections = [
 					<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
 				</a>
 				<a
-					href={`mailto:${EMAIL}`}
-					class="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
+					href="/contact"
+					class="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-300 shadow-2xs"
 				>
 					<span>Get in Touch</span>
 					<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
