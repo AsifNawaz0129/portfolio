@@ -1,7 +1,7 @@
 // Global data and metadata for the site
 
 export const SITE_TITLE = 'Asif Nawaz | Senior SDET & QA Automation Engineer';
-export const SITE_URL = 'https://portfolio.asifnawaz.workers.dev';
+export const SITE_URL = 'https://anawaz.dev';
 export const SITE_DESCRIPTION =
 	'Portfolio of Asif Nawaz, Senior SQA Engineer & Senior SDET with 8+ years of experience engineering scalable test automation frameworks, CI/CD pipelines, and AI-driven QA workflows.';
 export const SITE_AUTHOR = 'Asif Nawaz';
