@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE } from '../consts';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_ROLE, SITE_TITLE, SITE_URL } from '../consts';
 
 const personSchema = {
 	'@context': 'https://schema.org',
@@ -11,7 +11,7 @@ const personSchema = {
 	jobTitle: SITE_ROLE,
 	description:
 		'Senior Software QA Engineer & AI Automation Architect with 8+ years of experience engineering scalable test infrastructure across enterprise web, mobile, and API ecosystems.',
-	url: Astro.site?.toString() ?? 'https://asifnawaz.com/about',
+	url: Astro.site?.toString() ?? `${SITE_URL}/about`,
 	sameAs: [GITHUB_URL, LINKEDIN_URL],
 };
 ---
