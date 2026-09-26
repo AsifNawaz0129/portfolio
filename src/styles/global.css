@@ -138,3 +138,16 @@ html.dark .text-emerald-800,
 html.dark-mode .text-emerald-800 {
   color: #6ee7b7 !important;
 }
+
+/* Theme Slider Switch Smooth Translation */
+.theme-slider-thumb {
+  transform: translateX(0);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+html.dark .theme-slider-thumb,
+html.dark-mode .theme-slider-thumb,
+:root[data-theme="dark"] .theme-slider-thumb {
+  transform: translateX(1.45rem);
+}
