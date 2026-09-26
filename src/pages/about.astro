@@ -14,29 +14,6 @@ const personSchema = {
 	url: Astro.site?.toString() ?? 'https://asifnawaz.com/about',
 	sameAs: [GITHUB_URL, LINKEDIN_URL],
 };
-
-const pillars = [
-	{
-		title: 'Playwright & Cypress',
-		description: 'Code-first automation frameworks in TypeScript & Python with parallel CI execution matrices.',
-		icon: 'code',
-	},
-	{
-		title: 'AI-Driven QA Architect',
-		description: 'Pioneering autonomous self-healing test suites, synthetic test data, and AI defect triage.',
-		icon: 'cpu',
-	},
-	{
-		title: 'Mobile & API SDET',
-		description: 'Cross-platform mobile automation with Appium/Webdriver.io and contract testing with Postman.',
-		icon: 'smartphone',
-	},
-	{
-		title: 'ISTQB Certified & QA Lead',
-		description: 'Certified Tester (CTFL) driving shift-left methodologies, JMeter load testing, and release sign-offs.',
-		icon: 'shield-check',
-	},
-];
 ---
 
 <!doctype html>
@@ -51,9 +28,9 @@ const pillars = [
 	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
 		<Header />
 
-		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-12 sm:space-y-16">
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-2 sm:pb-4 space-y-10 sm:space-y-12">
 			<!-- Header Section -->
-			<section class="space-y-3 pt-2" aria-labelledby="about-heading">
+			<section class="space-y-2 pt-2" aria-labelledby="about-heading">
 				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
 					&#40; get to know me &#41;
 				</div>
@@ -61,155 +38,461 @@ const pillars = [
 					id="about-heading"
 					class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
 				>
-					About <span class="italic text-accent font-serif font-normal">Me</span>
+					About <span class="italic text-accent font-serif font-normal inline-block relative">
+						Me
+						<svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-3 text-accent pointer-events-none overflow-visible" viewBox="0 0 100 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+							<path d="M 2 6 Q 25 12, 50 6 T 98 6" />
+						</svg>
+					</span>
 				</h1>
 			</section>
 
-			<!-- Main 2-Column About Grid -->
-			<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start" aria-label="Profile Overview">
-				<!-- Left Column: Portrait & Floating Badge -->
-				<div class="lg:col-span-5 flex justify-center lg:justify-start">
-					<div class="relative w-full max-w-md">
-						<!-- Arched Image Container -->
-						<div class="w-full aspect-4/5 rounded-t-full rounded-b-3xl overflow-hidden border border-line bg-paper-card shadow-sm relative">
-							<img
-								src="/asif-nawaz.jpg"
-								alt="Asif Nawaz - Senior Software QA Engineer & SDET"
-								class="w-full h-full object-cover object-top"
-								loading="eager"
-							/>
-						</div>
+			<!-- Hero Bio Grid: Left Narrative + Right Arched Profile Card with Ambient Node Network -->
+			<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center" aria-label="Profile Overview">
+				<!-- Left Column: Rich Narrative Bio with Drop-Cap -->
+				<div class="lg:col-span-7 space-y-6">
+					<div class="space-y-4 text-base sm:text-lg text-muted leading-relaxed font-sans">
+						<!-- Paragraph 1 with Drop-Cap: Strong Automation Emphasis -->
+						<p class="overflow-hidden">
+							<span class="text-6xl sm:text-7xl font-serif font-bold text-ink float-left mr-3.5 mt-0.5 leading-[0.8] select-none">H</span>
+							<strong class="text-ink font-semibold text-lg sm:text-xl">i, I’m Asif</strong> — a <strong class="text-ink font-semibold">Senior Software QA Engineer & AI Automation Architect</strong> based in Islamabad, Pakistan with <strong class="text-accent font-semibold font-serif italic text-lg sm:text-xl">eight years</strong> of shipping high-reliability code-first test infrastructure across enterprise web, mobile, and API platforms.
+						</p>
 
-						<!-- Floating Info Badge on Bottom-Left -->
-						<div class="absolute -bottom-5 left-4 sm:left-6 bg-paper-card/95 backdrop-blur-xs border border-line rounded-2xl p-3.5 sm:p-4 shadow-md flex items-center justify-between gap-4 max-w-[90%]">
-							<div class="space-y-0.5">
-								<div class="text-sm font-bold font-serif text-ink leading-tight">
-									Asif Nawaz
-								</div>
-								<div class="text-[10px] font-mono uppercase tracking-wider text-muted">
-									Islamabad, PK
-								</div>
-							</div>
-							<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-300/80 bg-emerald-100/70 text-emerald-800 text-[10px] font-mono font-medium tracking-wide shadow-2xs shrink-0">
-								<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
-								<span>Available</span>
-							</div>
-						</div>
+						<!-- Paragraph 2: Career History & Test Automation Frameworks -->
+						<p>
+							I’ve led quality engineering initiatives at <strong class="text-ink font-semibold">ShopWorks</strong> (London Remote), <strong class="text-ink font-semibold">Rayn</strong>, <strong class="text-ink font-semibold">Aurora Solutions</strong>, and <strong class="text-ink font-semibold">MFSYS</strong>. Architected custom test automation frameworks in <span class="text-ink font-medium">Playwright</span>, <span class="text-ink font-medium">Cypress</span>, <span class="text-ink font-medium">Selenium</span>, and <span class="text-ink font-medium">Testim</span>, slashing CI pipeline feedback loops by <strong class="text-accent font-semibold">45%</strong> and scaling regression coverage.
+						</p>
+
+						<!-- Paragraph 3: Overall Multi-Domain QA & Team Mentorship -->
+						<p>
+							In addition to test automation architecture, I bring deep end-to-end testing expertise across <strong class="text-ink font-semibold">Mobile Apps (iOS & Android)</strong>, <strong class="text-ink font-semibold">Relational Databases (SQL data audits & schema verification)</strong>, <strong class="text-ink font-semibold">Web Applications</strong>, and <strong class="text-ink font-semibold">Microservice APIs</strong> — with a proven track record of <strong class="text-ink font-semibold">guiding and mentoring engineering teams</strong> to build robust testing standards from day one.
+						</p>
+
+						<!-- Paragraph 4: Future & Focus -->
+						<p>
+							Currently specializing in <span class="italic text-accent font-serif font-medium">autonomous self-healing test suites</span> and Generative AI for synthetic test data generation and intelligent defect triage. Open to <strong class="text-ink font-semibold">Senior SDET</strong>, <strong class="text-ink font-semibold">QA Lead</strong>, and <strong class="text-ink font-semibold">AI Automation Architect</strong> roles globally (Remote).
+						</p>
 					</div>
 				</div>
 
-				<!-- Right Column: Narrative & Pillars -->
-				<div class="lg:col-span-7 space-y-8 pt-4 lg:pt-0">
-					<!-- Narrative Bio with prominent Drop-Cap and Italic Accent Phrases -->
-					<div class="space-y-5 text-base sm:text-lg text-muted leading-relaxed font-sans">
-						<p class="overflow-hidden">
-							<span class="text-6xl sm:text-7xl font-serif font-bold text-accent float-left mr-3 mt-1 leading-[0.8] select-none">H</span>
-							<strong class="text-ink font-semibold text-lg sm:text-xl">i, I'm Asif</strong> — a <span class="italic text-accent font-serif font-medium">senior software quality assurance engineer & AI automation architect</span> based in Islamabad, Pakistan, with <strong class="text-ink font-semibold">eight years</strong> of shipping high-reliability code-first test infrastructure across enterprise web, mobile, and API platforms.
-						</p>
-
-						<p>
-							I've led quality engineering initiatives at <strong class="text-ink font-semibold">Shopworks</strong> (London Remote), <strong class="text-ink font-semibold">Rayn</strong>, <strong class="text-ink font-semibold">Aurora Solutions</strong>, and <strong class="text-ink font-semibold">MFSYS</strong>. Architected custom test automation frameworks in <span class="italic text-accent font-serif font-medium">Playwright, Cypress, and Selenium</span>, slashing CI pipeline feedback loops by <strong class="text-ink font-semibold">45%</strong> and scaling automated regression coverage by <strong class="text-ink font-semibold">60%</strong>.
-						</p>
-
-						<p>
-							Currently specializing in <span class="italic text-accent font-serif font-medium">autonomous self-healing test suites</span> and Generative AI for test data generation and intelligent defect triage. Open to <span class="italic text-accent font-serif font-medium">Senior SDET, Lead QA, and AI Automation Architect</span> roles globally (Remote).
-						</p>
+				<!-- Right Column: Arched Profile Frame with Ambient Node Network Background -->
+				<div class="lg:col-span-5 flex justify-center lg:justify-end relative select-none">
+					<!-- Ambient Node Network SVG Background -->
+					<div class="absolute -inset-10 pointer-events-none hidden sm:block opacity-60" aria-hidden="true">
+						<svg class="w-full h-full" viewBox="0 0 450 450" fill="none">
+							<!-- Node Network Lines -->
+							<path d="M 40 180 L 140 120 L 280 80 L 380 140" stroke="#e5e1d8" stroke-width="1.2" stroke-dasharray="4 4" />
+							<path d="M 80 260 L 140 120 L 220 280 L 360 320" stroke="#e5e1d8" stroke-width="1.2" />
+							<path d="M 280 80 L 340 220 L 410 260" stroke="#e5e1d8" stroke-width="1.2" stroke-dasharray="3 3" />
+							
+							<!-- Network Nodes -->
+							<circle cx="140" cy="120" r="5" fill="#f8f6f0" stroke="#c0441f" stroke-width="2" />
+							<circle cx="280" cy="80" r="4" fill="#e5e1d8" />
+							<circle cx="80" cy="260" r="4.5" fill="#f8f6f0" stroke="#66635e" stroke-width="1.5" />
+							<circle cx="360" cy="320" r="4" fill="#e5e1d8" />
+							<circle cx="340" cy="220" r="6" fill="#f8f6f0" stroke="#c0441f" stroke-width="2" class="animate-pulse" />
+						</svg>
 					</div>
 
-					<!-- 2x2 Highlights Grid -->
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-						{
-							pillars.map((pillar) => (
-								<div class="p-5 sm:p-6 rounded-2xl border border-line bg-paper-card space-y-2.5 hover:border-accent/40 transition-none">
-									<div class="text-accent">
-										{pillar.icon === 'code' && (
-											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-										)}
-										{pillar.icon === 'cpu' && (
-											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-										)}
-										{pillar.icon === 'smartphone' && (
-											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-										)}
-										{pillar.icon === 'shield-check' && (
-											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-										)}
-									</div>
-									<h2 class="text-sm font-bold font-sans text-ink">
-										{pillar.title}
-									</h2>
-									<p class="text-xs text-muted leading-relaxed font-sans">
-										{pillar.description}
-									</p>
+					<!-- Profile Frame Container -->
+					<div class="relative w-full max-w-[340px] sm:max-w-[370px]">
+						<!-- Arched Glass & Canvas Frame -->
+						<div class="w-full aspect-[3.8/5] rounded-t-[140px] rounded-b-3xl overflow-hidden border-2 border-line bg-paper-card shadow-lg p-2.5 relative group">
+							<div class="w-full h-full rounded-t-[130px] rounded-b-2xl overflow-hidden relative bg-paper">
+								<img
+									src="/asif-nawaz.jpg"
+									alt="Asif Nawaz - Senior Software QA Engineer & SDET"
+									class="w-full h-full object-cover object-top filter contrast-[1.02] group-hover:scale-103 transition-transform duration-500 ease-out"
+									loading="eager"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-60"></div>
+							</div>
+						</div>
+
+						<!-- Floating Name & Status Badge -->
+						<div class="absolute -bottom-4 sm:-bottom-5 left-4 right-4 sm:left-6 sm:right-6 bg-paper-card/95 backdrop-blur-md border border-line rounded-2xl p-3.5 sm:p-4 shadow-md flex items-center justify-between gap-3">
+							<div class="space-y-0.5 min-w-0">
+								<div class="text-sm sm:text-base font-bold font-serif text-ink leading-tight truncate">
+									Asif Nawaz
 								</div>
-							))
-						}
-					</div>
-
-					<!-- Action Buttons Row -->
-					<div class="flex flex-wrap items-center gap-4 pt-4">
-						<a
-							href="/Asif-Nawaz-Resume.pdf"
-							download="Asif-Nawaz-Resume.pdf"
-							class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-300 shadow-sm active:scale-98"
-						>
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-							<span class="text-paper font-medium">Download Resume</span>
-						</a>
-						<a
-							href="/experience"
-							class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-line bg-paper-card text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs"
-						>
-							<span class="text-ink font-medium">View Experience</span>
-						</a>
-						<a
-							href="/contact"
-							class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-muted text-sm font-mono hover:text-ink transition-colors duration-200"
-						>
-							<span>Get in Touch →</span>
-						</a>
+								<div class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-muted truncate">
+									Islamabad, PK
+								</div>
+							</div>
+							<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-300/80 bg-emerald-100/70 text-emerald-800 text-[10px] sm:text-xs font-mono font-medium tracking-wide shadow-2xs shrink-0">
+								<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+								<span>OPEN TO WORK</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- Bottom CTA Banner -->
-			<section
-				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
-				aria-labelledby="cta-heading"
-			>
-				<div class="space-y-2">
-					<div class="font-mono text-xs text-accent tracking-wide">
-						&#40; have a project in mind? &#41;
+			<!-- 5 Cards Data & Pillars Grid Matching Design -->
+			<section aria-label="Key Qualifications & Capabilities" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-4">
+				<!-- Card 1: 8+ YEARS Circular Dial Badge -->
+				<div class="p-5 rounded-2xl border border-line bg-paper-card flex flex-col items-center justify-between text-center shadow-2xs hover:shadow-sm hover:border-accent/40 transition-all duration-300 relative overflow-hidden group min-h-[180px]">
+					<div class="relative w-28 h-28 flex items-center justify-center my-auto">
+						<svg class="w-full h-full" viewBox="0 0 120 120" fill="none">
+							<defs>
+								<linearGradient id="dialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+									<stop offset="0%" stop-color="#c0441f" />
+									<stop offset="50%" stop-color="#e28743" />
+									<stop offset="100%" stop-color="#8a2d10" />
+								</linearGradient>
+							</defs>
+							<!-- Background Track -->
+							<circle cx="60" cy="60" r="48" stroke="#e5e1d8" stroke-width="3" />
+							<!-- Metallic Accent Arc -->
+							<circle cx="60" cy="60" r="48" stroke="url(#dialGrad)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="230 70" class="rotate-[-90deg] origin-center group-hover:rotate-[270deg] transition-transform duration-1000 ease-in-out" />
+							<!-- Inner Dotted Ring -->
+							<circle cx="60" cy="60" r="40" stroke="#e5e1d8" stroke-width="1.2" stroke-dasharray="3 3" />
+							<!-- Center Fill -->
+							<circle cx="60" cy="60" r="36" fill="#f8f6f0" />
+						</svg>
+
+						<!-- Dial Content -->
+						<div class="absolute inset-0 flex flex-col items-center justify-center select-none">
+							<span class="text-2xl sm:text-3xl font-serif italic font-bold text-ink leading-none">8+</span>
+							<span class="text-[9px] font-mono tracking-wider text-muted uppercase font-bold pt-0.5">YEARS</span>
+							<!-- Checkmark Badge -->
+							<div class="w-3.5 h-3.5 rounded-full bg-accent/10 text-accent flex items-center justify-center mt-1">
+								<svg class="w-2 h-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+							</div>
+						</div>
 					</div>
-					<h2
-						id="cta-heading"
-						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
-					>
-						Let’s build <span class="italic text-accent font-normal">bulletproof systems</span>
-					</h2>
+					<div class="text-[10px] font-mono uppercase tracking-wider text-muted font-semibold pt-1 border-t border-line/40 w-full">
+						Years Experience
+					</div>
 				</div>
 
-				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed">
-					Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
-				</p>
+				<!-- Card 2: -45% Execution Time Reduction -->
+				<div class="p-5 rounded-2xl border border-line bg-paper-card flex flex-col justify-between shadow-2xs hover:shadow-sm hover:border-accent/40 transition-all duration-300 group min-h-[180px]">
+					<div class="flex items-start justify-between gap-2">
+						<span class="text-3xl font-serif italic text-ink leading-none">-45%</span>
+						<!-- Downward Trend Sparkline -->
+						<svg class="w-10 h-7 text-accent" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M 4 6 Q 16 8, 24 16 T 36 20" />
+							<circle cx="36" cy="20" r="2" fill="#c0441f" />
+						</svg>
+					</div>
+					<div class="pt-4 border-t border-line/50">
+						<div class="text-[10px] font-mono uppercase tracking-wider text-muted font-semibold leading-relaxed">
+							CI Execution Time Reduction
+						</div>
+					</div>
+				</div>
 
-				<div class="flex flex-wrap items-center gap-4 pt-2">
+				<!-- Card 3: 60%+ Automated Coverage Scale-Up -->
+				<div class="p-5 rounded-2xl border border-line bg-paper-card flex flex-col justify-between shadow-2xs hover:shadow-sm hover:border-accent/40 transition-all duration-300 group min-h-[180px]">
+					<div class="flex items-start justify-between gap-2">
+						<span class="text-3xl font-serif italic text-ink leading-none">60%+</span>
+						<!-- Upward Trend Sparkline -->
+						<svg class="w-10 h-7 text-accent" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M 4 20 Q 16 16, 24 10 T 36 4" />
+							<circle cx="36" cy="4" r="2" fill="#c0441f" />
+						</svg>
+					</div>
+					<div class="pt-4 border-t border-line/50">
+						<div class="text-[10px] font-mono uppercase tracking-wider text-muted font-semibold leading-relaxed">
+							Automated Coverage Scale-Up
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 4: Playwright & Cypress -->
+				<div class="p-5 rounded-2xl border border-line bg-paper-card flex flex-col justify-between shadow-2xs hover:shadow-sm hover:border-accent/40 transition-all duration-300 group min-h-[180px]">
+					<div class="space-y-2.5">
+						<div class="flex items-center justify-between gap-2">
+							<div class="flex items-center gap-1 text-base">
+								<span>🎭</span>
+								<span class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100/70 px-1 py-0.5 rounded">CY</span>
+							</div>
+							<div class="w-6 h-6 rounded-md bg-paper border border-line flex items-center justify-center text-[10px] font-mono text-muted group-hover:text-accent group-hover:border-accent/40 transition-colors">
+								&lt;/&gt;
+							</div>
+						</div>
+						<h2 class="text-sm font-bold font-sans text-ink leading-snug">
+							Playwright & Cypress
+						</h2>
+						<p class="text-xs text-muted leading-relaxed font-sans">
+							Structured automation frameworks with parallel CI execution matrices.
+						</p>
+					</div>
+				</div>
+
+				<!-- Card 5: AI Neural QA Architect -->
+				<div class="p-5 rounded-2xl border border-line bg-paper-card flex flex-col justify-between shadow-2xs hover:shadow-sm hover:border-accent/40 transition-all duration-300 group min-h-[180px]">
+					<div class="space-y-2.5">
+						<div class="flex items-center justify-between gap-2">
+							<div class="w-6 h-6 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+								<svg class="w-3.5 h-3.5 animate-spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+									<line x1="12" y1="2" x2="12" y2="22" /><line x1="2" y1="12" x2="22" y2="12" /><line x1="4.93" y1="4.93" x2="19.07" y2="19.07" /><line x1="4.93" y1="19.07" x2="19.07" y2="4.93" />
+								</svg>
+							</div>
+							<div class="w-6 h-6 rounded-md bg-paper border border-line flex items-center justify-center text-xs text-muted group-hover:text-accent group-hover:border-accent/40 transition-colors">
+								🧠
+							</div>
+						</div>
+						<h2 class="text-sm font-bold font-sans text-ink leading-snug">
+							AI Neural QA Architect
+						</h2>
+						<p class="text-xs text-muted leading-relaxed font-sans">
+							Mastering self-healing locators, synthetic test data & AI defect triage.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Full-Spectrum QA & Leadership Pillars -->
+			<section class="space-y-6 pt-2" aria-labelledby="pillars-heading">
+				<div class="space-y-2">
+					<div class="font-mono text-xs text-accent tracking-wide">
+						&#40; holistic quality engineering &#41;
+					</div>
+					<h2 id="pillars-heading" class="text-2xl sm:text-3xl font-bold font-serif text-ink tracking-tight">
+						Beyond Automation: Full-Spectrum QA & Leadership
+					</h2>
+					<p class="text-sm sm:text-base text-muted max-w-2xl font-sans">
+						True quality engineering extends across the entire stack. I lead multi-platform testing initiatives, audit data layers, and mentor engineering teams to build resilient software from day one.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+					<!-- Domain 1: Mobile & Web Apps -->
+					<div class="p-6 rounded-2xl border border-line bg-paper-card space-y-3.5 shadow-2xs hover:shadow-sm hover:border-ink/30 transition-all duration-300 group">
+						<div class="w-10 h-10 rounded-xl bg-paper border border-line flex items-center justify-center text-accent text-lg group-hover:border-accent/40 transition-colors">
+							📱
+						</div>
+						<h3 class="text-base font-bold font-serif text-ink group-hover:text-accent transition-colors">
+							Web & Mobile Apps (iOS / Android)
+						</h3>
+						<p class="text-xs sm:text-sm text-muted leading-relaxed font-sans">
+							Comprehensive functional, UI/UX, cross-browser, and native mobile testing across iOS & Android using Appium, Maestro, and Flutter Driver.
+						</p>
+						<div class="flex flex-wrap gap-1.5 pt-2">
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">iOS & Android</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Cross-Browser</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Maestro</span>
+						</div>
+					</div>
+
+					<!-- Domain 2: Database & SQL Integrity -->
+					<div class="p-6 rounded-2xl border border-line bg-paper-card space-y-3.5 shadow-2xs hover:shadow-sm hover:border-ink/30 transition-all duration-300 group">
+						<div class="w-10 h-10 rounded-xl bg-paper border border-line flex items-center justify-center text-accent text-lg group-hover:border-accent/40 transition-colors">
+							🗄️
+						</div>
+						<h3 class="text-base font-bold font-serif text-ink group-hover:text-accent transition-colors">
+							Database & Data Integrity (SQL)
+						</h3>
+						<p class="text-xs sm:text-sm text-muted leading-relaxed font-sans">
+							Deep backend data verification, writing complex SQL queries, reconciling financial transactions, audit compliance, and data migration validation.
+						</p>
+						<div class="flex flex-wrap gap-1.5 pt-2">
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Complex SQL</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Data Auditing</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Schema Validation</span>
+						</div>
+					</div>
+
+					<!-- Domain 3: API & Microservices Testing -->
+					<div class="p-6 rounded-2xl border border-line bg-paper-card space-y-3.5 shadow-2xs hover:shadow-sm hover:border-ink/30 transition-all duration-300 group">
+						<div class="w-10 h-10 rounded-xl bg-paper border border-line flex items-center justify-center text-accent text-lg group-hover:border-accent/40 transition-colors">
+							⚡
+						</div>
+						<h3 class="text-base font-bold font-serif text-ink group-hover:text-accent transition-colors">
+							API & Microservices Testing
+						</h3>
+						<p class="text-xs sm:text-sm text-muted leading-relaxed font-sans">
+							End-to-end contract testing, schema validations, mock servers, and payload verification using Postman, REST Assured, and Swagger.
+						</p>
+						<div class="flex flex-wrap gap-1.5 pt-2">
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">REST Assured</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Postman / Newman</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Contract Tests</span>
+						</div>
+					</div>
+
+					<!-- Domain 4: QA Leadership & Mentorship -->
+					<div class="p-6 rounded-2xl border border-line bg-paper-card space-y-3.5 shadow-2xs hover:shadow-sm hover:border-ink/30 transition-all duration-300 group">
+						<div class="w-10 h-10 rounded-xl bg-paper border border-line flex items-center justify-center text-accent text-lg group-hover:border-accent/40 transition-colors">
+							👥
+						</div>
+						<h3 class="text-base font-bold font-serif text-ink group-hover:text-accent transition-colors">
+							QA Leadership & Team Mentorship
+						</h3>
+						<p class="text-xs sm:text-sm text-muted leading-relaxed font-sans">
+							Guiding cross-functional squads, mentoring junior QA engineers in automation best practices, defining test plans, and managing release sign-offs.
+						</p>
+						<div class="flex flex-wrap gap-1.5 pt-2">
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Team Mentoring</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Quality Gates</span>
+							<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-paper border border-line text-muted">Release Sign-Offs</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Action Buttons & Quick Links Bar Matching Design -->
+			<section aria-label="Action Links" class="flex flex-wrap items-center justify-between gap-4 py-2 border-y border-line/60">
+				<!-- Social Link Icons -->
+				<div class="flex items-center gap-2">
 					<a
-						href="/contact"
-						class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-sm"
+						href={GITHUB_URL}
+						target="_blank"
+						rel="noreferrer noopener"
+						aria-label="GitHub Profile"
+						class="w-10 h-10 rounded-full border border-line bg-paper flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-colors"
 					>
-						<span class="text-paper font-medium">Get in Touch</span>
-						<span class="text-paper font-medium">→</span>
+						<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
 					</a>
 					<a
 						href={LINKEDIN_URL}
 						target="_blank"
 						rel="noreferrer noopener"
-						class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+						aria-label="LinkedIn Profile"
+						class="w-10 h-10 rounded-full border border-line bg-paper flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-colors"
 					>
-						<span class="text-ink font-medium">LinkedIn Profile</span>
-						<span class="text-xs text-muted">↗</span>
+						<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.28 1.64 1.64 0 0 0 .01 3.28m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
 					</a>
+					<a
+						href={`mailto:${EMAIL}`}
+						aria-label="Send Email"
+						class="w-10 h-10 rounded-full border border-line bg-paper flex items-center justify-center text-ink hover:text-accent hover:border-accent transition-colors"
+					>
+						<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+					</a>
+				</div>
+
+				<!-- Navigation Actions -->
+				<div class="flex flex-wrap items-center gap-3">
+					<a
+						href="/Asif-Nawaz-Resume.pdf"
+						download="Asif-Nawaz-Resume.pdf"
+						class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-ink text-paper text-xs sm:text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-300 shadow-sm active:scale-98"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+						<span>Download Resume</span>
+					</a>
+					<a
+						href="/experience"
+						class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-line bg-paper-card text-ink text-xs sm:text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs"
+					>
+						<span>View Experience</span>
+						<span class="text-xs">→</span>
+					</a>
+					<a
+						href="/contact"
+						class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-muted text-xs sm:text-sm font-mono hover:text-ink transition-colors duration-200"
+					>
+						<span>Get in Touch</span>
+						<span>→</span>
+					</a>
+				</div>
+			</section>
+
+			<!-- Bottom Collaboration Banner with Pipeline Architecture SVG Matching Design -->
+			<section
+				class="p-8 sm:p-12 lg:p-14 rounded-3xl border border-line bg-paper-card relative overflow-hidden shadow-2xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+				aria-labelledby="cta-heading"
+			>
+				<!-- Left Text & Actions (lg:col-span-7) -->
+				<div class="lg:col-span-7 space-y-5 relative z-10">
+					<div class="space-y-2">
+						<div class="font-mono text-xs text-accent tracking-wide">
+							&#40; have a project in mind? &#41;
+						</div>
+						<h2
+							id="cta-heading"
+							class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-ink tracking-tight"
+						>
+							Let’s build <span class="italic text-accent font-normal">bulletproof systems.</span>
+						</h2>
+					</div>
+
+					<p class="text-sm sm:text-base text-muted max-w-lg leading-relaxed">
+						Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
+					</p>
+
+					<div class="flex flex-wrap items-center gap-3.5 pt-2">
+						<a
+							href="/contact"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-sm"
+						>
+							<span class="text-paper font-medium">Get in Touch</span>
+							<span class="text-paper font-medium">→</span>
+						</a>
+						<a
+							href={LINKEDIN_URL}
+							target="_blank"
+							rel="noreferrer noopener"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+						>
+							<span class="text-ink font-medium">LinkedIn Profile</span>
+							<span class="text-xs text-accent font-mono font-bold">in</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Right Pipeline Architecture Flowchart SVG (lg:col-span-5) -->
+				<div class="lg:col-span-5 flex items-center justify-center relative select-none" aria-hidden="true">
+					<div class="w-full max-w-[420px] aspect-[2/1] flex items-center justify-center">
+						<svg class="w-full h-full" viewBox="0 0 360 160" fill="none">
+							<!-- Connecting Pipeline Paths -->
+							<!-- Main Highway Track -->
+							<path d="M 30 80 L 95 80 L 175 80 L 255 80 L 320 80" stroke="#e5e1d8" stroke-width="2" />
+							<!-- Top Bypass Branch -->
+							<path d="M 95 80 C 120 30, 230 30, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+							<!-- Bottom Bypass Branch -->
+							<path d="M 95 80 C 120 130, 230 130, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+
+							<!-- Animated Signal Pulse travelling through main line -->
+							<circle cx="30" cy="80" r="3.5" fill="#c0441f" class="animate-pulse" />
+
+							<!-- Node 1: Code / Input -->
+							<g transform="translate(30, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<circle cx="0" cy="0" r="5" fill="#c0441f" />
+							</g>
+
+							<!-- Node 2: Database / Test Data (Center-Left) -->
+							<g transform="translate(100, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<!-- Cylinder Database Icon -->
+								<path d="M -8 -6 C -8 -9, 8 -9, 8 -6 C 8 -3, -8 -3, -8 -6 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 -6 L -8 6 C -8 9, 8 9, 8 6 L 8 -6" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 0 C -8 3, 8 3, 8 0" stroke="#66635e" stroke-width="1.2" fill="none" />
+							</g>
+
+							<!-- Node 3: CI Matrix / Test Hub (Center-Right) -->
+							<g transform="translate(180, 80)">
+								<circle cx="0" cy="0" r="22" fill="#f8f6f0" stroke="#c0441f" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(192,68,31,0.12))" />
+								<!-- Network Hub Fork Icon -->
+								<circle cx="0" cy="0" r="3" fill="#c0441f" />
+								<circle cx="-6" cy="-6" r="2" fill="#66635e" />
+								<circle cx="-6" cy="6" r="2" fill="#66635e" />
+								<circle cx="6" cy="0" r="2" fill="#66635e" />
+								<line x1="-4" y1="-4" x2="-1" y2="-1" stroke="#66635e" stroke-width="1" />
+								<line x1="-4" y1="4" x2="-1" y2="1" stroke="#66635e" stroke-width="1" />
+								<line x1="2" y1="0" x2="4" y2="0" stroke="#66635e" stroke-width="1" />
+							</g>
+
+							<!-- Node 4: Cloud Runner / Upload (Right) -->
+							<g transform="translate(260, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<!-- Cloud & Arrow Icon -->
+								<path d="M -7 2 A 4 4 0 0 1 -3 -3 A 6 6 0 0 1 5 -2 A 4 4 0 0 1 7 2 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<line x1="0" y1="4" x2="0" y2="-1" stroke="#c0441f" stroke-width="1.2" />
+								<polyline points="-2 1 0 -1 2 1" stroke="#c0441f" stroke-width="1.2" fill="none" />
+							</g>
+
+							<!-- Node 5: Success Release Gate (End) -->
+							<g transform="translate(325, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<polyline points="-4 0 -1 3 4 -2" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+						</svg>
+					</div>
 				</div>
 			</section>
 		</main>

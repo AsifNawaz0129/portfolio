@@ -20,46 +20,203 @@ const isActive = (href: string) => {
 };
 ---
 
-<header class="w-full border-b border-line bg-paper/90 backdrop-blur-xs sticky top-0 z-50">
-	<div class="mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-12 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<header class="w-full border-b border-line bg-paper/95 backdrop-blur-md sticky top-0 z-50">
+	<div class="mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-12 py-3.5 sm:py-4 flex items-center justify-between gap-4">
+		<!-- Brand Logo -->
 		<a
 			href="/"
-			class="text-xl sm:text-2xl font-bold tracking-tight text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none font-serif italic"
+			class="text-xl sm:text-2xl font-bold tracking-tight text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none font-serif italic shrink-0"
 			aria-label="Asif Nawaz - Home"
 		>
 			<span class="not-italic font-sans font-bold">A</span>N<span class="text-accent">.</span>
 		</a>
 
-		<nav aria-label="Main Navigation">
-			<ul class="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-2 text-sm list-none m-0 p-0 font-mono">
+		<!-- Desktop Navigation (md and up) -->
+		<div class="hidden md:flex items-center gap-6 lg:gap-8">
+			<nav id="desktop-nav" aria-label="Main Navigation">
+				<ul class="flex items-center gap-x-6 lg:gap-x-8 text-sm list-none m-0 p-0 font-mono">
+					{
+						navItems.map((item) => {
+							const active = isActive(item.href);
+							return (
+								<li class="relative pb-1">
+									<a
+										href={item.href}
+										aria-current={active ? 'page' : undefined}
+										class:list={[
+											'transition-colors duration-150 py-1 inline-block focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2',
+											active
+												? 'text-ink font-semibold'
+												: 'text-muted hover:text-ink',
+										]}
+									>
+										{item.label}
+									</a>
+									{active && (
+										<span
+											class="absolute -bottom-1 left-0 w-full h-[2.5px] bg-accent block"
+											aria-hidden="true"
+										/>
+									)}
+								</li>
+							);
+						})
+					}
+				</ul>
+			</nav>
+
+			<!-- Desktop Resume Button -->
+			<a
+				href="/Asif-Nawaz-Resume.pdf"
+				download="Asif-Nawaz-Resume.pdf"
+				class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-line bg-paper-card text-xs font-mono font-semibold text-ink hover:border-accent hover:text-accent hover:bg-paper focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs shrink-0"
+				aria-label="Download Resume PDF"
+			>
+				<svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+				<span>Resume</span>
+				<span class="text-[10px] text-muted font-normal">PDF</span>
+			</a>
+		</div>
+
+		<!-- Mobile Header Controls (below md) -->
+		<div class="flex md:hidden items-center gap-2.5">
+			<a
+				href="/Asif-Nawaz-Resume.pdf"
+				download="Asif-Nawaz-Resume.pdf"
+				class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-line bg-paper-card text-[11px] font-mono font-semibold text-ink hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-accent shadow-2xs"
+				aria-label="Download Resume PDF"
+			>
+				<svg class="w-3 h-3 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+				<span>Resume</span>
+			</a>
+
+			<!-- Accessible Hamburger Toggle Button -->
+			<button
+				id="mobile-menu-toggle"
+				type="button"
+				class="p-2 rounded-xl border border-line bg-paper-card text-ink hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-colors cursor-pointer"
+				aria-label="Open main navigation menu"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
+			>
+				<!-- Hamburger Icon (Shown when closed) -->
+				<svg id="hamburger-icon" class="w-5 h-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<line x1="4" y1="6" x2="20" y2="6" />
+					<line x1="4" y1="12" x2="20" y2="12" />
+					<line x1="4" y1="18" x2="20" y2="18" />
+				</svg>
+				<!-- Close Icon (Shown when open) -->
+				<svg id="close-icon" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<line x1="18" y1="6" x2="6" y2="18" />
+					<line x1="6" y1="6" x2="18" y2="18" />
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile Collapsible Navigation Menu Drawer -->
+	<div
+		id="mobile-menu"
+		class="hidden md:hidden border-t border-line bg-paper/98 backdrop-blur-lg px-4 sm:px-8 py-5 space-y-4 transition-all duration-300 shadow-md"
+	>
+		<nav id="mobile-nav" aria-label="Mobile Navigation">
+			<ul class="space-y-1.5 list-none m-0 p-0 font-mono text-sm">
 				{
 					navItems.map((item) => {
 						const active = isActive(item.href);
 						return (
-							<li class="relative pb-1">
+							<li>
 								<a
 									href={item.href}
 									aria-current={active ? 'page' : undefined}
 									class:list={[
-										'transition-none py-1 inline-block focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2',
+										'flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150',
 										active
-											? 'text-ink font-semibold'
-											: 'text-muted hover:text-ink',
+											? 'bg-accent/10 text-accent font-semibold border border-accent/20 shadow-2xs'
+											: 'text-ink hover:bg-paper-card hover:text-accent',
 									]}
 								>
-									{item.label}
+									<span class="capitalize">{item.label}</span>
+									{active ? (
+										<span class="w-2 h-2 rounded-full bg-accent inline-block"></span>
+									) : (
+										<span class="text-xs text-muted font-normal">→</span>
+									)}
 								</a>
-								{active && (
-									<span
-										class="absolute -bottom-1 left-0 w-full h-[2.5px] bg-accent block"
-										aria-hidden="true"
-									/>
-								)}
 							</li>
 						);
 					})
 				}
 			</ul>
 		</nav>
+
+		<!-- Mobile Menu Footer Actions -->
+		<div class="pt-4 border-t border-line/60 flex flex-col gap-2.5">
+			<a
+				href="/Asif-Nawaz-Resume.pdf"
+				download="Asif-Nawaz-Resume.pdf"
+				class="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-ink text-paper text-xs font-mono font-medium hover:bg-accent transition-colors shadow-2xs"
+			>
+				<svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+				<span>Download Resume (PDF)</span>
+			</a>
+		</div>
 	</div>
 </header>
+
+<script>
+	function initMobileMenu() {
+		const toggleBtn = document.getElementById('mobile-menu-toggle');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const hamburgerIcon = document.getElementById('hamburger-icon');
+		const closeIcon = document.getElementById('close-icon');
+
+		if (!toggleBtn || !mobileMenu || !hamburgerIcon || !closeIcon) return;
+
+		function toggleMenu(open?: boolean) {
+			const isCurrentlyOpen = toggleBtn?.getAttribute('aria-expanded') === 'true';
+			const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+
+			toggleBtn?.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+			toggleBtn?.setAttribute('aria-label', shouldOpen ? 'Close main navigation menu' : 'Open main navigation menu');
+
+			if (shouldOpen) {
+				mobileMenu?.classList.remove('hidden');
+				hamburgerIcon?.classList.add('hidden');
+				closeIcon?.classList.remove('hidden');
+			} else {
+				mobileMenu?.classList.add('hidden');
+				hamburgerIcon?.classList.remove('hidden');
+				closeIcon?.classList.add('hidden');
+			}
+		}
+
+		toggleBtn.addEventListener('click', () => toggleMenu());
+
+		// Close menu when clicking navigation links inside mobile menu
+		const mobileLinks = mobileMenu.querySelectorAll('a');
+		mobileLinks.forEach((link) => {
+			link.addEventListener('click', () => toggleMenu(false));
+		});
+
+		// Close menu on Escape key press
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+				toggleMenu(false);
+				toggleBtn.focus();
+			}
+		});
+
+		// Close menu when resizing to desktop viewport
+		window.addEventListener('resize', () => {
+			if (window.innerWidth >= 768 && toggleBtn.getAttribute('aria-expanded') === 'true') {
+				toggleMenu(false);
+			}
+		});
+	}
+
+	// Initialize on page load
+	initMobileMenu();
+	// Re-initialize on Astro page transitions if present
+	document.addEventListener('astro:page-load', initMobileMenu);
+</script>

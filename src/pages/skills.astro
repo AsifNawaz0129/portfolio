@@ -96,7 +96,7 @@ const skillSections = [
 	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
 		<Header />
 
-		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-10 sm:space-y-14">
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-2 sm:pb-4 space-y-10 sm:space-y-12">
 			<!-- Header Section -->
 			<section class="space-y-4 pt-2 text-center max-w-3xl mx-auto" aria-labelledby="skills-heading">
 				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
@@ -106,10 +106,15 @@ const skillSections = [
 					id="skills-heading"
 					class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
 				>
-					Skills & <span class="italic text-accent font-serif font-normal">Stack</span>
+					Skills & <span class="italic text-accent font-serif font-normal inline-block relative">
+						Stack
+						<svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-3 text-accent pointer-events-none overflow-visible" viewBox="0 0 100 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+							<path d="M 2 6 Q 25 12, 50 6 T 98 6" />
+						</svg>
+					</span>
 				</h1>
 				<p class="text-base sm:text-lg text-muted font-sans leading-relaxed">
-					Over 8 years of production software quality engineering, architecting code-first test frameworks, optimizing CI/CD feedback loops, and pioneering AI-assisted quality workflows.
+					A comprehensive technical toolkit spanning <strong class="text-ink font-semibold">Web Applications, Mobile Apps (iOS & Android), Relational Databases (SQL), Microservice APIs, QA Team Leadership, and AI Quality Engineering</strong>.
 				</p>
 			</section>
 
@@ -235,45 +240,90 @@ const skillSections = [
 				</a>
 			</section>
 
-			<!-- Bottom CTA Banner -->
+			<!-- Bottom CTA Banner with Pipeline Architecture Flowchart -->
 			<section
-				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				class="p-8 sm:p-12 lg:p-14 rounded-3xl border border-line bg-paper-card relative overflow-hidden shadow-2xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
 				aria-labelledby="cta-heading"
 			>
-				<div class="space-y-2">
-					<div class="font-mono text-xs text-accent tracking-wide">
-						&#40; have a project in mind? &#41;
+				<div class="lg:col-span-7 space-y-5 relative z-10">
+					<div class="space-y-2">
+						<div class="font-mono text-xs text-accent tracking-wide">
+							&#40; collaborate &#41;
+						</div>
+						<h2
+							id="cta-heading"
+							class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-ink tracking-tight"
+						>
+							Let’s build <span class="italic text-accent font-normal">bulletproof systems.</span>
+						</h2>
 					</div>
-					<h2
-						id="cta-heading"
-						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
-					>
-						Let’s build <span class="italic text-accent font-normal">something reliable</span>
-					</h2>
+
+					<p class="text-sm sm:text-base text-muted max-w-lg leading-relaxed">
+						Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
+					</p>
+
+					<div class="flex flex-wrap items-center gap-3.5 pt-2">
+						<a
+							href="/contact"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-sm"
+						>
+							<span class="text-paper font-medium">Get in Touch</span>
+							<span class="text-paper font-medium">→</span>
+						</a>
+						<a
+							href={LINKEDIN_URL}
+							target="_blank"
+							rel="noreferrer noopener"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+						>
+							<span class="text-ink font-medium">LinkedIn Profile</span>
+							<span class="text-xs text-accent font-mono font-bold">in</span>
+						</a>
+					</div>
 				</div>
 
-				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
-					Whether you are setting up automated E2E testing from scratch, accelerating flaky CI/CD pipelines, or integrating AI-assisted quality workflows, I’d love to connect.
-				</p>
+				<!-- Right Pipeline Architecture Flowchart SVG -->
+				<div class="lg:col-span-5 flex items-center justify-center relative select-none" aria-hidden="true">
+					<div class="w-full max-w-[420px] aspect-[2/1] flex items-center justify-center">
+						<svg class="w-full h-full" viewBox="0 0 360 160" fill="none">
+							<path d="M 30 80 L 95 80 L 175 80 L 255 80 L 320 80" stroke="#e5e1d8" stroke-width="2" />
+							<path d="M 95 80 C 120 30, 230 30, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+							<path d="M 95 80 C 120 130, 230 130, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+							<circle cx="30" cy="80" r="3.5" fill="#c0441f" class="animate-pulse" />
 
-				<div class="flex flex-wrap items-center gap-4 pt-2">
-					<a
-						href="/contact"
-						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-200 shadow-sm"
-					>
-						<span>Get in Touch</span>
-						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
-					</a>
-					<a
-						href={LINKEDIN_URL}
-						target="_blank"
-						rel="noreferrer noopener"
-						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
-					>
-						<svg class="w-4 h-4 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-						<span>LinkedIn Profile</span>
-						<span class="text-xs">↗</span>
-					</a>
+							<!-- Nodes -->
+							<g transform="translate(30, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<circle cx="0" cy="0" r="5" fill="#c0441f" />
+							</g>
+							<g transform="translate(100, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<path d="M -8 -6 C -8 -9, 8 -9, 8 -6 C 8 -3, -8 -3, -8 -6 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 -6 L -8 6 C -8 9, 8 9, 8 6 L 8 -6" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 0 C -8 3, 8 3, 8 0" stroke="#66635e" stroke-width="1.2" fill="none" />
+							</g>
+							<g transform="translate(180, 80)">
+								<circle cx="0" cy="0" r="22" fill="#f8f6f0" stroke="#c0441f" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(192,68,31,0.12))" />
+								<circle cx="0" cy="0" r="3" fill="#c0441f" />
+								<circle cx="-6" cy="-6" r="2" fill="#66635e" />
+								<circle cx="-6" cy="6" r="2" fill="#66635e" />
+								<circle cx="6" cy="0" r="2" fill="#66635e" />
+								<line x1="-4" y1="-4" x2="-1" y2="-1" stroke="#66635e" stroke-width="1" />
+								<line x1="-4" y1="4" x2="-1" y2="1" stroke="#66635e" stroke-width="1" />
+								<line x1="2" y1="0" x2="4" y2="0" stroke="#66635e" stroke-width="1" />
+							</g>
+							<g transform="translate(260, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<path d="M -7 2 A 4 4 0 0 1 -3 -3 A 6 6 0 0 1 5 -2 A 4 4 0 0 1 7 2 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<line x1="0" y1="4" x2="0" y2="-1" stroke="#c0441f" stroke-width="1.2" />
+								<polyline points="-2 1 0 -1 2 1" stroke="#c0441f" stroke-width="1.2" fill="none" />
+							</g>
+							<g transform="translate(325, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<polyline points="-4 0 -1 3 4 -2" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+						</svg>
+					</div>
 				</div>
 			</section>
 		</main>

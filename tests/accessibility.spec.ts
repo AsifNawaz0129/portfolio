@@ -8,9 +8,7 @@ const pagesToAudit = [
 	{ path: '/projects', name: 'Projects Page' },
 	{ path: '/skills', name: 'Skills Page' },
 	{ path: '/blog', name: 'Blog Index Page' },
-	{ path: '/blog/playwright-component-object-model', name: 'Blog Post: Playwright COM' },
-	{ path: '/blog/reducing-gitlab-ci-feedback-loops', name: 'Blog Post: GitLab CI' },
-	{ path: '/blog/ai-driven-qa-self-healing-locators', name: 'Blog Post: AI Self-Healing QA' },
+	{ path: '/blog/why-we-chose-maestro-over-appium', name: 'Blog Post: Why We Chose Maestro Over Appium' },
 	{ path: '/contact', name: 'Contact Page' },
 ];
 

@@ -8,25 +8,27 @@ const experiences = [
 	{
 		period: 'AUG 2023 — PRESENT',
 		type: 'FULL-TIME · REMOTE',
-		role: 'Senior SQA Engineer / SDET (QA Team Lead)',
-		company: 'ShopWorks',
+		role: 'Senior SQA Engineer',
+		company: 'Shopworks',
 		location: 'London, England (Remote)',
 		summary:
 			'Leading end-to-end quality engineering, test automation architecture, and deployment sign-offs for an enterprise workforce management SaaS platform.',
 		achievements: [
 			'Led end-to-end QA activities across major enterprise product releases, coordinating manual and automated testing across 5+ feature streams and providing final deployment sign-offs.',
 			'Architected custom, highly reusable automation wrapper libraries and test components, expanding automated E2E regression test coverage by 60% across complex distributed web platforms.',
-			'Designed and maintained parallel test execution matrices in GitLab CI using Playwright and TypeScript, slashing pipeline feedback loops by 45% while managing isolated test state environments.',
+			'Designed and maintained parallel test execution matrices in GitLab CI using TypeScript, slashing pipeline feedback loops by 45% while managing isolated test state environments.',
+			'Reduced regression testing turnaround by 40-50% through high-risk scenario identification and strategic automation suite scaling.',
 			'Stabilized CI automation suites by refactoring legacy tests and improving dynamic synchronization strategies, reducing CI pipeline failures by ~60%.',
 			'Validated AI-driven workflows and AI-generated outputs against strict business acceptance criteria and system requirements.',
 			'Conducted comprehensive performance and load testing using Apache JMeter to validate system scalability under peak operational stress.',
-			'Maintained and updated automated test cases within existing Testim projects according to project updates and feature changes.',
-			'Optimized developer productivity by reducing average bug resolution time from hours to under 45 minutes using automated stack traces, video artifacts, and isolated reproduction logs.',
+			'Integrated automated tests into CI/CD pipelines (GitLab CI) enabling early defect detection and faster release validation.',
+			'Maintained and updated automated test cases within existing Testim.io projects, utilizing JavaScript for developing custom steps to handle complex UI logic.',
+			'Implemented cross-platform mobile automation using Maestro for both iOS and Android to streamline high-velocity UI testing.',
 		],
-		skills: ['Playwright', 'TypeScript', 'Testim', 'GitLab CI', 'Docker', 'Apache JMeter', 'Allure', 'AI QA'],
+		technologies: ['Testim.io', 'JavaScript', 'TypeScript', 'Maestro', 'GitLab CI', 'Apache JMeter', 'AI QA', 'Docker'],
 	},
 	{
-		period: 'JUL 2022 — AUG 2023',
+		period: 'JUL 2022 — JUL 2023',
 		type: 'FULL-TIME',
 		role: 'QA Automation Engineer (SDET) / SQA Engineer II',
 		company: 'Rayn',
@@ -34,17 +36,19 @@ const experiences = [
 		summary:
 			'Directed QA and test automation efforts for multi-platform web and mobile releases, mentoring a team of junior QA engineers in test design techniques and standards.',
 		achievements: [
+			'Directed QA and test automation efforts for multi-platform web and mobile releases, mentoring a team of junior QA engineers in test design techniques and standards.',
 			'Engineered a modular, cross-platform mobile test automation framework from scratch for React Native applications utilizing Appium, Webdriver.io, and Node.js.',
 			'Established a Component Object Model (COM) strategy, decoupling UI layers into isolated components to maintain test stability across rapid UI updates.',
 			'Increased automated regression safety bounds by 50% while cutting test execution cycles in half, achieving a consistent 99% release pass rate.',
 			'Executed robust API integration and contract testing using Postman and Swagger to validate payload schemas across frontend-to-backend microservices.',
 			'Identified and resolved critical production defects within 24 hours, driving testing process optimizations that delivered a 20% gain in team efficiency.',
-			'Managed QA efforts for web and mobile releases, ensuring functional, integration, and regression testing coverage across 3+ product modules using ClickUp.',
+			'Managed QA efforts for web and mobile releases, ensuring functional, integration, and regression testing coverage across 3+ product modules.',
+			'Tracked and managed defects using ClickUp, improving release confidence and defect turnaround.',
 		],
-		skills: ['Appium', 'Webdriver.io', 'React Native', 'Node.js', 'Postman', 'Swagger', 'BrowserStack', 'ClickUp'],
+		technologies: ['Appium', 'Webdriver.io', 'React Native', 'Node.js', 'Postman', 'Swagger', 'ClickUp', 'COM Pattern'],
 	},
 	{
-		period: 'AUG 2019 — JUL 2022',
+		period: 'JUL 2019 — JUN 2022',
 		type: 'FULL-TIME',
 		role: 'Software Quality Assurance Engineer',
 		company: 'Aurora Solutions',
@@ -52,45 +56,45 @@ const experiences = [
 		summary:
 			'Owned software quality assurance within cross-functional Agile squads, delivering timely, zero-defect release validation across sprint cycles.',
 		achievements: [
+			'Owned software quality assurance within cross-functional Agile squads, delivering timely, zero-defect release validation across sprint cycles.',
 			'Built automated E2E test suites for web and mobile applications using Cypress and Flutter Driver, boosting regression test coverage by 50%.',
 			'Conducted deep-dive performance, stress, and load testing for web applications using Apache JMeter, ensuring optimal responsiveness and a 90% pass rate under load.',
 			'Maintained rigorous defect tracking and test reporting in Jira, improving resolution visibility and triage for over 100+ reported defects.',
 			'Researched and integrated modern AI-assisted testing tools into the QA lifecycle to optimize test authoring and exploratory testing efficiency.',
-			'Collaborated with cross-functional teams to ensure quality releases in agile test cycles and provided recommendations to enhance overall user accessibility.',
+			'Provided recommendations to enhance overall user experience, ensuring applications were user-friendly and met accessibility standards.',
 		],
-		skills: ['Cypress', 'Flutter Driver', 'Apache JMeter', 'Jira', 'Agile / Scrum', 'Web & Mobile QA'],
+		technologies: ['Cypress', 'Flutter Driver', 'Apache JMeter', 'Jira', 'Agile / Scrum', 'AI Testing'],
 	},
 	{
-		period: 'AUG 2018 — AUG 2019',
+		period: 'JUL 2018 — AUG 2019',
 		type: 'FULL-TIME',
 		role: 'Software Quality Assurance Engineer',
-		company: 'MFSYS Software And Systems (Pvt.) Ltd.',
+		company: 'MFSYS (Pvt.) Ltd.',
 		location: 'Islamabad, Pakistan',
 		summary:
 			'Performed comprehensive requirement analysis, automated script development, and banking platform quality verification.',
 		achievements: [
+			'Performed comprehensive requirement analysis to derive risk-based functional, boundary, and user acceptance test scenarios for financial software platforms.',
 			'Developed and implemented custom automated test scripts for web applications from scratch using Selenium WebDriver with Java.',
-			'Validated core microfinance banking platforms for distributed branch networks, ensuring transactional accuracy and audit compliance across loan origination, KYC onboarding, and fund disbursement workflows.',
-			'Identified and resolved over 100 critical defects, including complex edge cases in interest rate compounding, penalty accruals, and end-of-day general ledger reconciliations.',
-			'Ensured data integrity by verifying that automated repayment schedules consistently reconciled against backend SQL databases, preventing balance mismatches.',
 			'Executed full-cycle functional, sanity, regression, integration, and UI compatibility testing across cross-browser environments.',
+			'Documented, tracked, and verified 100+ defects, compiling regular test status and quality metrics reports for engineering stakeholders.',
+			'Reconciled automated repayment schedules against backend SQL databases to prevent balance mismatches and ensure audit compliance.',
 		],
-		skills: ['Selenium WebDriver', 'Java', 'SQL', 'TestNG', 'Banking QA', 'Regression Testing'],
+		technologies: ['Selenium WebDriver', 'Java', 'SQL', 'TestNG', 'Financial QA', 'Cross-Browser'],
 	},
 	{
-		period: 'MAY 2017 — JUN 2017',
-		type: 'INTERNSHIP',
-		role: 'Frontend Developer',
-		company: 'uExel',
+		period: '2014 — 2018',
+		type: 'EDUCATION',
+		role: 'Bachelor of Science (BS) Computer Science',
+		company: 'National University of Computer and Emerging Sciences (FAST-NUCES)',
 		location: 'Islamabad, Pakistan',
 		summary:
-			'Developed responsive web interfaces, reusable code libraries, and dynamic client-side interactions.',
+			'Graduated with core foundations in Software Engineering, Algorithms, Database Systems, Computer Networks, and Object-Oriented Programming.',
 		achievements: [
-			'Created high-quality, responsive web pages using HTML, CSS, and Bootstrap.',
-			'Developing user-friendly interfaces that deliver a seamless user experience and reusable code libraries.',
-			'Implemented and maintained JavaScript-based functionality, such as form validation and dynamic content loading.',
+			'Core focus on Software Testing, Quality Assurance, Distributed Computing, and Data Structures.',
+			'Engineered academic capstone projects covering automated testing and full-stack software development.',
 		],
-		skills: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Responsive Design'],
+		technologies: ['Computer Science', 'Software Engineering', 'Data Structures', 'Algorithms', 'Java', 'C++'],
 	},
 ];
 
@@ -129,7 +133,7 @@ const certifications = [
 	<body class="bg-paper text-ink selection:bg-accent-subtle selection:text-accent">
 		<Header />
 
-		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-12 sm:space-y-16">
+		<main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 pt-4 sm:pt-6 pb-2 sm:pb-4 space-y-10 sm:space-y-12">
 			<!-- Header Section -->
 			<section class="space-y-4 pt-2" aria-labelledby="experience-heading">
 				<div class="font-mono text-xs sm:text-sm text-accent tracking-wide">
@@ -141,10 +145,15 @@ const certifications = [
 							id="experience-heading"
 							class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ink font-serif leading-none"
 						>
-							<span class="italic text-accent font-serif font-normal">Career</span> Experience
+							<span class="italic text-accent font-serif font-normal inline-block relative">
+								Career
+								<svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-3 text-accent pointer-events-none overflow-visible" viewBox="0 0 100 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+									<path d="M 2 6 Q 25 12, 50 6 T 98 6" />
+								</svg>
+							</span> Experience
 						</h1>
 						<p class="text-base sm:text-lg text-muted max-w-2xl font-sans mt-4 leading-relaxed">
-							8+ years of engineering scalable test infrastructure, leading QA teams, accelerating CI/CD pipelines, and driving AI-assisted automation across enterprise SaaS, FinTech, and mobile ecosystems.
+							8+ years of leading holistic quality engineering across <strong class="text-ink font-semibold">Web Applications, Mobile Apps (iOS & Android), Relational Databases (SQL), and Microservice APIs</strong> — mentoring QA squads, establishing testing standards, accelerating CI/CD pipelines, and driving AI-assisted automation.
 						</p>
 					</div>
 
@@ -222,9 +231,9 @@ const certifications = [
 
 									<!-- Skills Stack Tags -->
 									<div class="flex flex-wrap gap-2 pt-4 border-t border-line/60">
-										{item.skills.map((skill) => (
+										{item.technologies.map((tech) => (
 											<span class="px-3 py-1 rounded-md bg-paper border border-line text-xs font-mono text-muted">
-												{skill}
+												{tech}
 											</span>
 										))}
 									</div>
@@ -304,44 +313,90 @@ const certifications = [
 				</a>
 			</section>
 
-			<!-- Bottom CTA Banner -->
+			<!-- Bottom CTA Banner with Pipeline Architecture Flowchart -->
 			<section
-				class="p-8 sm:p-14 rounded-3xl border border-line bg-paper-card space-y-6 relative overflow-hidden"
+				class="p-8 sm:p-12 lg:p-14 rounded-3xl border border-line bg-paper-card relative overflow-hidden shadow-2xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
 				aria-labelledby="cta-heading"
 			>
-				<div class="space-y-2">
-					<div class="font-mono text-xs text-accent tracking-wide">
-						&#40; collaborate &#41;
+				<div class="lg:col-span-7 space-y-5 relative z-10">
+					<div class="space-y-2">
+						<div class="font-mono text-xs text-accent tracking-wide">
+							&#40; collaborate &#41;
+						</div>
+						<h2
+							id="cta-heading"
+							class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-ink tracking-tight"
+						>
+							Let’s build <span class="italic text-accent font-normal">bulletproof systems.</span>
+						</h2>
 					</div>
-					<h2
-						id="cta-heading"
-						class="text-3xl sm:text-5xl font-bold font-serif text-ink tracking-tight"
-					>
-						Let’s build <span class="italic text-accent font-normal">something reliable</span>
-					</h2>
+
+					<p class="text-sm sm:text-base text-muted max-w-lg leading-relaxed">
+						Interested in elevating your test automation architecture, eliminating flaky CI pipelines, or scaling QA engineering? Let's connect.
+					</p>
+
+					<div class="flex flex-wrap items-center gap-3.5 pt-2">
+						<a
+							href="/contact"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-sm"
+						>
+							<span class="text-paper font-medium">Get in Touch</span>
+							<span class="text-paper font-medium">→</span>
+						</a>
+						<a
+							href={LINKEDIN_URL}
+							target="_blank"
+							rel="noreferrer noopener"
+							class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-none"
+						>
+							<span class="text-ink font-medium">LinkedIn Profile</span>
+							<span class="text-xs text-accent font-mono font-bold">in</span>
+						</a>
+					</div>
 				</div>
 
-				<p class="text-sm sm:text-base text-muted max-w-xl leading-relaxed font-sans">
-					Interested in elevating your test automation architecture, eliminating flaky CI pipelines, or scaling QA engineering? Let's connect.
-				</p>
+				<!-- Right Pipeline Architecture Flowchart SVG -->
+				<div class="lg:col-span-5 flex items-center justify-center relative select-none" aria-hidden="true">
+					<div class="w-full max-w-[420px] aspect-[2/1] flex items-center justify-center">
+						<svg class="w-full h-full" viewBox="0 0 360 160" fill="none">
+							<path d="M 30 80 L 95 80 L 175 80 L 255 80 L 320 80" stroke="#e5e1d8" stroke-width="2" />
+							<path d="M 95 80 C 120 30, 230 30, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+							<path d="M 95 80 C 120 130, 230 130, 255 80" stroke="#e5e1d8" stroke-width="1.5" stroke-dasharray="4 4" />
+							<circle cx="30" cy="80" r="3.5" fill="#c0441f" class="animate-pulse" />
 
-				<div class="flex flex-wrap items-center gap-4 pt-2">
-					<a
-						href="/contact"
-						class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-ink text-paper text-sm font-medium hover:bg-accent transition-all duration-200 shadow-sm"
-					>
-						<span>Get in Touch</span>
-						<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
-					</a>
-					<a
-						href={GITHUB_URL}
-						target="_blank"
-						rel="noreferrer noopener"
-						class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line bg-paper text-ink text-sm font-medium hover:border-ink transition-all duration-200"
-					>
-						<span>GitHub Work</span>
-						<span class="text-xs">↗</span>
-					</a>
+							<!-- Nodes -->
+							<g transform="translate(30, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<circle cx="0" cy="0" r="5" fill="#c0441f" />
+							</g>
+							<g transform="translate(100, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<path d="M -8 -6 C -8 -9, 8 -9, 8 -6 C 8 -3, -8 -3, -8 -6 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 -6 L -8 6 C -8 9, 8 9, 8 6 L 8 -6" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<path d="M -8 0 C -8 3, 8 3, 8 0" stroke="#66635e" stroke-width="1.2" fill="none" />
+							</g>
+							<g transform="translate(180, 80)">
+								<circle cx="0" cy="0" r="22" fill="#f8f6f0" stroke="#c0441f" stroke-width="1.5" filter="drop-shadow(0 2px 8px rgba(192,68,31,0.12))" />
+								<circle cx="0" cy="0" r="3" fill="#c0441f" />
+								<circle cx="-6" cy="-6" r="2" fill="#66635e" />
+								<circle cx="-6" cy="6" r="2" fill="#66635e" />
+								<circle cx="6" cy="0" r="2" fill="#66635e" />
+								<line x1="-4" y1="-4" x2="-1" y2="-1" stroke="#66635e" stroke-width="1" />
+								<line x1="-4" y1="4" x2="-1" y2="1" stroke="#66635e" stroke-width="1" />
+								<line x1="2" y1="0" x2="4" y2="0" stroke="#66635e" stroke-width="1" />
+							</g>
+							<g transform="translate(260, 80)">
+								<circle cx="0" cy="0" r="20" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<path d="M -7 2 A 4 4 0 0 1 -3 -3 A 6 6 0 0 1 5 -2 A 4 4 0 0 1 7 2 Z" stroke="#66635e" stroke-width="1.2" fill="none" />
+								<line x1="0" y1="4" x2="0" y2="-1" stroke="#c0441f" stroke-width="1.2" />
+								<polyline points="-2 1 0 -1 2 1" stroke="#c0441f" stroke-width="1.2" fill="none" />
+							</g>
+							<g transform="translate(325, 80)">
+								<circle cx="0" cy="0" r="14" fill="#f8f6f0" stroke="#e5e1d8" stroke-width="1.5" />
+								<polyline points="-4 0 -1 3 4 -2" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+						</svg>
+					</div>
 				</div>
 			</section>
 		</main>
