@@ -108,5 +108,29 @@ test.describe('Navigation Links & CTA Flows', () => {
 		await backBtn.click();
 		await expect(page).toHaveURL(/\/blog/);
 	});
+
+	test('Dark theme toggle switches theme and persists in localStorage', async ({ page }) => {
+		await page.goto('/');
+
+		const themeBtn = page.locator('#theme-toggle-desktop');
+		await expect(themeBtn).toBeVisible();
+
+		// Check initial state
+		const initialIsDark = await page.evaluate(() => document.documentElement.classList.contains('dark'));
+
+		// Toggle theme
+		await themeBtn.click();
+
+		const afterToggleIsDark = await page.evaluate(() => document.documentElement.classList.contains('dark'));
+		expect(afterToggleIsDark).toBe(!initialIsDark);
+
+		const storedTheme = await page.evaluate(() => localStorage.getItem('theme'));
+		expect(storedTheme).toBe(afterToggleIsDark ? 'dark' : 'light');
+
+		// Reload page to verify persistence without flash
+		await page.reload();
+		const reloadedIsDark = await page.evaluate(() => document.documentElement.classList.contains('dark'));
+		expect(reloadedIsDark).toBe(afterToggleIsDark);
+	});
 });
 

@@ -2,19 +2,46 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 
+:root {
+  --paper: #f8f6f0;
+  --paper-card: #ffffff;
+  --ink: #141413;
+  --muted: #66635e;
+  --line: #e5e1d8;
+  --accent: #c0441f;
+  --accent-hover: #a83816;
+  --accent-subtle: #faeee9;
+  color-scheme: light;
+}
+
+html.dark,
+html.dark-mode,
+:root[data-theme="dark"],
+.dark {
+  --paper: #111110;
+  --paper-card: #1a1918;
+  --ink: #f5f3ef;
+  --muted: #9e9a93;
+  --line: #2e2d2a;
+  --accent: #e05d38;
+  --accent-hover: #f0704d;
+  --accent-subtle: #2d1b14;
+  color-scheme: dark;
+}
+
 @theme {
   --font-sans: "Inter Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-serif: "Charter", "Georgia", "Cambria", "Times New Roman", Times, serif;
 
-  --color-paper: #f8f6f0;
-  --color-paper-card: #ffffff;
-  --color-ink: #141413;
-  --color-muted: #66635e;
-  --color-line: #e5e1d8;
-  --color-accent: #c0441f;
-  --color-accent-hover: #a83816;
-  --color-accent-subtle: #faeee9;
+  --color-paper: var(--paper);
+  --color-paper-card: var(--paper-card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
 }
 
 @layer base {
@@ -27,6 +54,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   }
 
   main {
@@ -47,4 +75,66 @@
   code {
     font-family: var(--font-mono);
   }
+}
+
+/* Dark theme SVG & UI Enhancements */
+html.dark svg text[fill="#141413"],
+html.dark-mode svg text[fill="#141413"] {
+  fill: #f5f3ef !important;
+}
+
+html.dark svg text[fill="#66635e"],
+html.dark-mode svg text[fill="#66635e"] {
+  fill: #a39f99 !important;
+}
+
+html.dark svg [stroke="#e5e1d8"],
+html.dark-mode svg [stroke="#e5e1d8"] {
+  stroke: #2e2d2a !important;
+}
+
+html.dark svg [stroke="#66635e"],
+html.dark-mode svg [stroke="#66635e"] {
+  stroke: #807c75 !important;
+}
+
+html.dark svg [fill="#f8f6f0"],
+html.dark-mode svg [fill="#f8f6f0"] {
+  fill: #1a1918 !important;
+}
+
+html.dark svg [fill="#ffffff"],
+html.dark-mode svg [fill="#ffffff"] {
+  fill: #222120 !important;
+}
+
+html.dark #centerGlow stop:nth-child(1),
+html.dark-mode #centerGlow stop:nth-child(1) {
+  stop-color: #282725 !important;
+}
+
+html.dark #centerGlow stop:nth-child(2),
+html.dark-mode #centerGlow stop:nth-child(2) {
+  stop-color: #1a1918 !important;
+}
+
+html.dark #centerGlow stop:nth-child(3),
+html.dark-mode #centerGlow stop:nth-child(3) {
+  stop-color: #2e2d2a !important;
+}
+
+/* Open to work badge styles in dark mode */
+html.dark .bg-emerald-100\/70,
+html.dark-mode .bg-emerald-100\/70 {
+  background-color: rgba(6, 78, 59, 0.45) !important;
+}
+
+html.dark .border-emerald-300\/80,
+html.dark-mode .border-emerald-300\/80 {
+  border-color: rgba(52, 211, 153, 0.35) !important;
+}
+
+html.dark .text-emerald-800,
+html.dark-mode .text-emerald-800 {
+  color: #6ee7b7 !important;
 }

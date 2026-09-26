@@ -33,6 +33,27 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Theme Init (Instant zero-flash execution before DOM render) -->
+<script is:inline>
+	(function () {
+		try {
+			const storedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+
+			if (isDark) {
+				document.documentElement.classList.add('dark', 'dark-mode');
+				document.documentElement.setAttribute('data-theme', 'dark');
+			} else {
+				document.documentElement.classList.remove('dark', 'dark-mode');
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+		} catch (e) {
+			console.error('Theme initialization error:', e);
+		}
+	})();
+</script>
+
 <Font cssVariable="--font-atkinson" preload />
 
 <!-- Canonical URL -->

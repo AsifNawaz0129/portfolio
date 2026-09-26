@@ -65,21 +65,76 @@ const isActive = (href: string) => {
 				</ul>
 			</nav>
 
-			<!-- Desktop Resume Button -->
-			<a
-				href="/Asif-Nawaz-Resume.pdf"
-				download="Asif-Nawaz-Resume.pdf"
-				class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-line bg-paper-card text-xs font-mono font-semibold text-ink hover:border-accent hover:text-accent hover:bg-paper focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs shrink-0"
-				aria-label="Download Resume PDF"
-			>
-				<svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-				<span>Resume</span>
-				<span class="text-[10px] text-muted font-normal">PDF</span>
-			</a>
+			<div class="flex items-center gap-3">
+				<!-- Theme Toggle Button (Desktop) -->
+				<button
+					id="theme-toggle-desktop"
+					type="button"
+					class="p-2 rounded-full border border-line bg-paper-card text-ink hover:border-accent hover:text-accent hover:bg-paper focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs cursor-pointer flex items-center justify-center shrink-0 group"
+					aria-label="Toggle dark mode"
+					title="Toggle dark theme"
+				>
+					<!-- Sun Icon (Shown in Dark Mode) -->
+					<svg class="w-4 h-4 hidden dark:block text-accent transition-transform duration-300 group-hover:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="12" cy="12" r="4" />
+						<path d="M12 2v2" />
+						<path d="M12 20v2" />
+						<path d="m4.93 4.93 1.41 1.41" />
+						<path d="m17.66 17.66 1.41 1.41" />
+						<path d="M2 12h2" />
+						<path d="M20 12h2" />
+						<path d="m6.34 17.66-1.41 1.41" />
+						<path d="m19.07 4.93-1.41 1.41" />
+					</svg>
+					<!-- Moon Icon (Shown in Light Mode) -->
+					<svg class="w-4 h-4 block dark:hidden text-ink group-hover:text-accent transition-transform duration-300 group-hover:-rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+					</svg>
+				</button>
+
+				<!-- Desktop Resume Button -->
+				<a
+					href="/Asif-Nawaz-Resume.pdf"
+					download="Asif-Nawaz-Resume.pdf"
+					class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-line bg-paper-card text-xs font-mono font-semibold text-ink hover:border-accent hover:text-accent hover:bg-paper focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 transition-all duration-200 shadow-2xs shrink-0"
+					aria-label="Download Resume PDF"
+				>
+					<svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+					<span>Resume</span>
+					<span class="text-[10px] text-muted font-normal">PDF</span>
+				</a>
+			</div>
 		</div>
 
 		<!-- Mobile Header Controls (below md) -->
-		<div class="flex md:hidden items-center gap-2.5">
+		<div class="flex md:hidden items-center gap-2 sm:gap-2.5">
+			<!-- Theme Toggle Button (Mobile Header) -->
+			<button
+				id="theme-toggle-mobile"
+				type="button"
+				class="p-2 rounded-xl border border-line bg-paper-card text-ink hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-accent shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
+				aria-label="Toggle dark mode"
+				title="Toggle dark theme"
+			>
+				<!-- Sun Icon (Shown in Dark Mode) -->
+				<svg class="w-4 h-4 hidden dark:block text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<circle cx="12" cy="12" r="4" />
+					<path d="M12 2v2" />
+					<path d="M12 20v2" />
+					<path d="m4.93 4.93 1.41 1.41" />
+					<path d="m17.66 17.66 1.41 1.41" />
+					<path d="M2 12h2" />
+					<path d="M20 12h2" />
+					<path d="m6.34 17.66-1.41 1.41" />
+					<path d="m19.07 4.93-1.41 1.41" />
+				</svg>
+				<!-- Moon Icon (Shown in Light Mode) -->
+				<svg class="w-4 h-4 block dark:hidden text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+				</svg>
+			</button>
+
+			<!-- Mobile Resume Button -->
 			<a
 				href="/Asif-Nawaz-Resume.pdf"
 				download="Asif-Nawaz-Resume.pdf"
@@ -165,7 +220,46 @@ const isActive = (href: string) => {
 </header>
 
 <script>
-	function initMobileMenu() {
+	function setupHeader() {
+		// 1. Theme Toggle Logic
+		const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+		const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+		function getTheme() {
+			return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+		}
+
+		function setTheme(theme: 'dark' | 'light') {
+			const isDark = theme === 'dark';
+			if (isDark) {
+				document.documentElement.classList.add('dark', 'dark-mode');
+				document.documentElement.setAttribute('data-theme', 'dark');
+			} else {
+				document.documentElement.classList.remove('dark', 'dark-mode');
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+			localStorage.setItem('theme', theme);
+		}
+
+		function toggleTheme() {
+			const newTheme = getTheme() === 'dark' ? 'light' : 'dark';
+			setTheme(newTheme);
+		}
+
+		themeToggleDesktop?.addEventListener('click', toggleTheme);
+		themeToggleMobile?.addEventListener('click', toggleTheme);
+
+		// Listen to OS system theme changes if user has not explicitly chosen
+		if (window.matchMedia) {
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			mediaQuery.addEventListener('change', (e) => {
+				if (!localStorage.getItem('theme')) {
+					setTheme(e.matches ? 'dark' : 'light');
+				}
+			});
+		}
+
+		// 2. Mobile Menu Toggle Logic
 		const toggleBtn = document.getElementById('mobile-menu-toggle');
 		const mobileMenu = document.getElementById('mobile-menu');
 		const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -215,8 +309,7 @@ const isActive = (href: string) => {
 		});
 	}
 
-	// Initialize on page load
-	initMobileMenu();
-	// Re-initialize on Astro page transitions if present
-	document.addEventListener('astro:page-load', initMobileMenu);
+	// Initialize on page load and on Astro view transition lifecycle
+	setupHeader();
+	document.addEventListener('astro:page-load', setupHeader);
 </script>
