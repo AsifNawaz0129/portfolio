@@ -2,8 +2,6 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   --paper: #f8f6f0;
   --paper-card: #ffffff;
@@ -126,19 +124,18 @@ html.dark-mode #centerGlow stop:nth-child(3) {
 }
 
 /* Open to work badge styles in dark mode */
-html.dark .status-badge-open,
-html.dark-mode .status-badge-open,
-html.dark .status-badge-avail,
-html.dark-mode .status-badge-avail {
+html.dark .bg-emerald-100\/70,
+html.dark-mode .bg-emerald-100\/70 {
   background-color: rgba(6, 78, 59, 0.45) !important;
-  border-color: rgba(52, 211, 153, 0.35) !important;
-  color: #6ee7b7 !important;
 }
 
-html.dark .badge-cy,
-html.dark-mode .badge-cy {
-  background-color: rgba(6, 78, 59, 0.6) !important;
+html.dark .border-emerald-300\/80,
+html.dark-mode .border-emerald-300\/80 {
   border-color: rgba(52, 211, 153, 0.35) !important;
+}
+
+html.dark .text-emerald-800,
+html.dark-mode .text-emerald-800 {
   color: #6ee7b7 !important;
 }
 

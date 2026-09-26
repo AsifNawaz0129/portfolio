@@ -280,6 +280,16 @@ const isActive = (href: string) => {
 		themeToggleDesktop?.addEventListener('click', toggleTheme);
 		themeToggleMobile?.addEventListener('click', toggleTheme);
 
+		// Listen to OS system theme changes if user has not explicitly chosen
+		if (window.matchMedia) {
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			mediaQuery.addEventListener('change', (e) => {
+				if (!localStorage.getItem('theme')) {
+					setTheme(e.matches ? 'dark' : 'light');
+				}
+			});
+		}
+
 		// 2. Mobile Menu Toggle Logic
 		const toggleBtn = document.getElementById('mobile-menu-toggle');
 		const mobileMenu = document.getElementById('mobile-menu');
