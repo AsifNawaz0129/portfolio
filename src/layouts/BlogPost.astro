@@ -41,12 +41,14 @@ const techArticleSchema = {
 	},
 	keywords: tags.join(', '),
 };
+
+const blogOgImage = heroImage?.src || '/og-blog-maestro.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${title} | Asif Nawaz`} description={description} image={heroImage?.src || '/og-image.png'} />
+		<BaseHead title={`${title} | Asif Nawaz`} description={description} image={blogOgImage} />
 		<script type="application/ld+json" set:html={JSON.stringify(techArticleSchema)} />
 	</head>
 
