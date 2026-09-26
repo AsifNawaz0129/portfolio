@@ -43,8 +43,7 @@ const ogImageURL = new URL(image, Astro.site ?? SITE_URL).toString();
 	(function () {
 		try {
 			const storedTheme = localStorage.getItem('theme');
-			const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+			const isDark = storedTheme === 'light' ? false : true;
 
 			if (isDark) {
 				document.documentElement.classList.add('dark', 'dark-mode');
